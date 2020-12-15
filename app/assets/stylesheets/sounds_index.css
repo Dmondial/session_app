@@ -1,0 +1,105 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+/* リセットCSSここまで */
+
+/* 以下からCSSを記述すること */
+
+/* ヘッダー部分 */
+header{
+  background-color:rgb(218, 138, 47);
+  height: 80px;
+  width: 100vw;
+  margin: 0 auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+}
+
+.logo{
+  height: 80px;
+  width: 120px; 
+  background-color: salmon;
+}
+
+.signin-button{
+  width: 400px;
+  background-color: seagreen;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button{
+  margin: auto;
+}
+
+.tweet-button{
+  background-color: darkred;
+  position: absolute;
+  top: 90vh;
+  left: 90vw;
+}
+
+.tweet{
+  
+}
+
+/* ヘッダー部分 */
+
+/* body部 */
+
+body {
+  background-image: url("/images/bg_image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:  top;
+  background-size: 100%;
+  }
+
+
+.contents{
+  position:absolute;
+  top: 80px;
+  left: 10vw;
+  overflow: visible;
+}
+
+.top-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 80vw;
+}
+
+
+.search-content{
+  background-color: violet;
+  height: 100px;
+  width: 700px;
+  margin: 0 auto 0;
+}
+
+.middle-content{
+  background-color: green;
+  height: 100px;
+  width: 700px;
+  margin: 0 auto 0;
+}
+
+
+
+/* body部 */
