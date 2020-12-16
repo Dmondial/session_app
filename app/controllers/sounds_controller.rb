@@ -17,14 +17,14 @@ class SoundsController < ApplicationController
   end
 
   def sound_for 
-    @sound = Sound.find(params[:id]).sounds
-    send_file @sound.upload_file_path
+    @sound = Sound.find(params[:id]).audio
+    send_file url_for(@sound)
   end
 
   private
 
   def sound_params
-    params.require(:sound).permit(:title, :explain, :audio).merge(user_id: current_user.id)
+    params.require(:sound).permit(:title, :explain, :file).merge(user_id: current_user.id)
   end
 
 

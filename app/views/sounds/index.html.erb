@@ -50,6 +50,12 @@
       </div>
       <div class="sound-file">
         <audio class="audio-file">オーディオファイル</audio>
+        <%= audio_tag("piano.mp3", :autoplay => true, :controls => true) %>
+        <% @sound.each do |s| %>
+          <p><%= s.user.name %>さんの投稿</p> 
+          <%= audio_tag(s.file.url, :autoplay => true, :controls => true) %>
+          <%= link_to "ダウンロード" , s.file.url %>
+        <% end %>
       </div>
     </div>
 
