@@ -16,6 +16,9 @@ class SoundsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def sound_for 
     @sound = Sound.find(params[:id]).audio
     send_file url_for(@sound)
