@@ -23,7 +23,7 @@
       </div>
       <div class="tweet-button">
         <div class="tweet">
-          <a href="#">投稿する</a>
+          <%= link_to "投稿する", new_sound_path %>
         </div>
       </div>
     </div>
@@ -50,10 +50,10 @@
       </div>
       <div class="sound-file">
         <audio class="audio-file">オーディオファイル</audio>
-        <%= audio_tag("piano.mp3", :autoplay => true, :controls => true) %>
+        <%= audio_tag("piano.mp3", autoplay: false, controls: true) %>
         <% @sound.each do |s| %>
           <p><%= s.user.name %>さんの投稿</p> 
-          <%= audio_tag(s.file.url, :autoplay => true, :controls => true) %>
+          <%= audio_tag(s.file.url, autoplay: false, controls: true) %>
           <%= link_to "ダウンロード" , s.file.url %>
         <% end %>
       </div>
