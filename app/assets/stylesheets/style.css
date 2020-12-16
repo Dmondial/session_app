@@ -1,0 +1,111 @@
+body {
+  margin: 0px;
+  background: #222;
+  color: #fff;
+}
+
+a {
+  color: #f90;
+}
+
+.panel {
+  padding: 20px;
+  margin: 0px 10px;
+  border-radius: 2px;
+  background: #333;
+}
+
+.pop {
+  text-align: center;
+  background: #555;
+}
+
+.caption {
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+.caption::after {
+  content: ':';
+}
+
+canvas {
+  display: block;
+  width: 100%;
+}
+
+#wav-view, #freq-view {
+  margin: 10px 0px;
+  height: 120px;
+  border: 1px solid #111;
+  background: #222;
+}
+
+#curtain {
+  display: none;
+  background: black;
+  opacity: 0.7;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.loading-box {
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 10px solid #fff;
+  box-sizing: border-box;
+  animation: rotate 0.8s infinite;
+  float: left;
+}
+
+.loading::before {
+  content: '';
+  width: 10px;
+  height: 100px;
+  background: black;
+  display: block;
+  margin-left: 35px;
+  margin-top: -10px;
+}
+
+.track {
+  line-height: 26px;
+  padding: 0px 20px;
+  margin: 2px 0px;
+  border-radius: 2px;
+  background: #d70;
+  font-size: small;
+  color: #fff;
+  cursor: pointer;
+}
+
+.track.muted {
+  background: #555;
+  color: #999;
+}
+
+@keyframes rotate{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .content{
+  height: 10px;
+  width: 10px;
+} */

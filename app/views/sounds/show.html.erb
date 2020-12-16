@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>Daw</title>
+    <meta charset="UTF-8">
+    <%# <link rel="stylesheet" href="css/style.css"> %>
+    <%# <script src="js/audio-visualiser.js"></script>
+    <script src="js/daw.js"></script> %>
+    <script>
+      // DAWインスタンス生成
+      // window.onload = () => {
+      //   let daw = new Daw();
+      // };
+    </script>
+  </head>
+
+  <body>
+
+  <%= audio_tag(@audio.file.url, :autoplay => true, :controls => true) %>
+
+
+    <!-- カーテン -->
+    <div id="curtain">
+      <div class="loading-box">
+        <div class="loading"></div>
+        <div class="loading-msg"></div>
+      </div>
+    </div>
+
+    <!-- ガイド -->
+    <div class="panel pop">
+      <span>手軽に遊べるように<a href="./mp3-samples.zip">サンプル</a>を作成しました。ダウンロード＆解凍してご自由にお使いください。</span>
+    </div>
+
+    <!-- 入力 -->
+    <div class="caption">入力（複数ファイル選択可能）</div>
+    <div class="panel audio-in">
+      <div class="file-wrapper">
+         <input type="file" id="wav-file" multiple>
+       
+      </div>
+    </div>
+    
+    <!-- トラックリスト -->
+    <div class="caption">トラックリスト（クリックでミュートON/OFF）</div>
+    <div class="panel audio-tracks">
+    </div>
+
+    <!-- 出力 -->
+    <div class="caption">出力</div>
+    <div class="panel audio-out">
+      <button id="play-btn">再生</button><span>ミュート ON / OFF を反映させるには一度停止させます</span>
+      <canvas id="wav-view"></canvas>
+      <canvas id="freq-view"></canvas>
+    </div>
+
+  </body>
+</html>

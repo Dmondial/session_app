@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  root to:"sounds#index"
   devise_for :users
 
-  resources :sounds
-  root to:"sounds#index"
+  resources :sounds do
+   member do
+    get 'sound_for'
+    end
+  end
+
+  
 end
