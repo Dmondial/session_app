@@ -56,6 +56,7 @@
           <p><%=link_to s.title, sound_path(s.id) %></p> 
           <p><%= s.explain %></p> 
           <%= audio_tag(s.file.url, autoplay: false, controls: true) %>
+          <p><%=link_to "#{s.title}とセッション", sound_for_session_path(s.id) %></p> 
           <%= link_to "ダウンロード" , s.file.url %>
         <% end %>
       </div>
