@@ -1,0 +1,2 @@
+class SessionSound < ApplicationRecord
+end
