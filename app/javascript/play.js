@@ -1,8 +1,6 @@
 function audio_play() {
   const playButton = document.getElementById("audio-play")
   const audioFile = document.getElementsByTagName("audio")
-  console.log(document.getElementsByTagName("audio"))
-  console.log(document.getElementsByTagName("audio").length)
   playButton.addEventListener("click",() => {
     for (var i = 0;  i < audioFile.length;  i++){
     audioFile[i].play();
