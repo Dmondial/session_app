@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @session = Session.new(session_params)
     if @session.save
       redirect_to session_path(@session.id)
@@ -20,7 +19,7 @@ class SessionsController < ApplicationController
 
   def show
     @session = Session.find(params[:id])
-    @sound = @session.sound
+    @sound = @session.sounds
   end
 
   def sound_for
