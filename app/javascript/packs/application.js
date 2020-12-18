@@ -8,6 +8,9 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../daw")
+require("../play")
+
+//= require audiojs
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

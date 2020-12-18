@@ -8,8 +8,13 @@
         </div>
         <div class="favo">★</div>
       </div>
+
+      <div id="audio-wrap">
+        <input id="audio-play" type="button" value="PLAY"><input id="audio-pause" type="button" value="PAUSE">
+
+      </div>
+
       <div class="sound-file">
-        <audio class="audio-file">オーディオファイル</audio>
         <%= audio_tag("piano.mp3", autoplay: false, controls: true) %>
         <% @sound.each do |s| %>
           <p><%= s.user.name %>さんの投稿</p> 
