@@ -2,3 +2,20 @@
   padding-top: 100px;
   text-align: center;
 }
+
+#audio-play{
+  height: 50px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+#audio-pause{
+  height: 50px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+#audio-reset{
+  height: 50px;
+  width: 100px;
+}

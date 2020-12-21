@@ -7,12 +7,24 @@ function audio_play() {
     };
   });
 };
+
 function audio_pause() {
   const pauseButton = document.getElementById("audio-pause")
   const audioFile = document.getElementsByTagName("audio")
   pauseButton.addEventListener("click",() => {
     for (var i = 0;  i < audioFile.length;  i++){
     audioFile[i].pause();
+    };
+  });
+};
+
+function audio_reset() {
+  const pauseButton = document.getElementById("audio-reset")
+  const audioFile = document.getElementsByTagName("audio")
+  pauseButton.addEventListener("click",() => {
+    for (var i = 0;  i < audioFile.length;  i++){
+    audioFile[i].pause();
+    audioFile[i].currentTime = 0;
     };
   });
 
@@ -22,3 +34,4 @@ function audio_pause() {
 
 window.addEventListener("load", audio_play)
 window.addEventListener("load", audio_pause)
+window.addEventListener("load", audio_reset)
