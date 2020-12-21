@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("../daw")
 require("../play")
+require("../login")
 
 //= require audiojs
 

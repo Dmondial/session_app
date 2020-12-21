@@ -20,9 +20,14 @@
     <% end %>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <p><input type="button" value="ログイン" id="sub-button"></p>
+      <%= f.submit "Log in" , id:"sub" %>
+      
     </div>
   <% end %>
 
   <%= render "users/shared/links" %>
+
+  <%= audio_tag("/assets/submit", autoplay: false, controls: true, id:"audio_sub") %>
+  <%= audio_tag("/assets/typewriter", autoplay: false, controls: true, id:"audio_typewriter") %>
 </div>

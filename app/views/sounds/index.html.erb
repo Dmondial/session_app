@@ -38,6 +38,7 @@
       <div class="sound-file">
         <% @sound.each do |s| %>
           <div class="sound-content ">
+          
             <p class="sound-name"><%= s.user.name %>さんの投稿</p> 
             <p><span>タイトル:</span><%=link_to s.title, sound_path(s.id) ,class:"sound-title"%></p> 
             <p class="sound-exp"><span>説明:</span><%= s.explain %></p> 
