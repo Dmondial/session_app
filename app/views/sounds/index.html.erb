@@ -37,11 +37,13 @@
       <div class="sound-file">
         <% @sound.each do |s| %>
           <div class="sound-content ">
-            <p><%= s.user.name %>さんの投稿</p> 
-            <p><%=link_to s.title, sound_path(s.id) %></p> 
-            <p><%= s.explain %></p> 
+            <p class="sound-name"><%= s.user.name %>さんの投稿</p> 
+            <p><span>タイトル:</span><%=link_to s.title, sound_path(s.id) ,class:"sound-title"%></p> 
+            <p class="sound-exp"><span>説明:</span><%= s.explain %></p> 
             <%= audio_tag(s.file.url, autoplay: false, controls: true) %>
-            <p><%=link_to "#{s.title}とセッション", sound_for_session_path(s.id) %></p> 
+            <div class="sound-session">
+              <%=link_to "#{s.title}とセッション", sound_for_session_path(s.id),class:"session-posi" %>
+            </div> 
             <%#= link_to "ダウンロード" , s.file.url %>
           </div>
         <% end %>

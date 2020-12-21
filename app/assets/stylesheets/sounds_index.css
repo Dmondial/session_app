@@ -43,16 +43,20 @@ header{
   width: 500px;
   position: absolute;
   right: calc(50vw - 250px);
-  background-color: salmon;
+
+  font-weight:bold;
+  font-size: 60px;
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: 'Bungee', cursive;
 }
 
 .signin-button{
   width: 300px;
-  background-color: seagreen;
   position: absolute;
   right: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  
 }
 
 .button{
@@ -60,15 +64,46 @@ header{
 }
 
 .tweet-button{
-  background-color: darkred;
+  background-color: #ff5500;
   position: absolute;
   top: 80vh;
   right: 10vw;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.fas{
+  color: whitesmoke;
 }
 
 .tweet{
   
 }
+
+.header-button{
+  height: 60px;
+  width: 100px;
+  border: hidden; 
+  background-color:rgb(53, 46, 34);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.link{
+  text-decoration: none;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 15px;
+}
+
 
 /* ヘッダー部分 */
 
@@ -80,6 +115,7 @@ body {
   background-attachment: fixed;
   background-position:  top;
   background-size: 100%;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   }
 
 
@@ -100,7 +136,7 @@ body {
 
 
 .search-content{
-  background-color: ;
+
   height: 100px;
   width: 700px;
   margin: 0 auto 0;
@@ -113,10 +149,11 @@ body {
 }
 
 .middle-content{
-  background-color:;
+
   height: 100px;
   width: 700px;
   margin: 0 auto 0;
+  padding: 100px 0 0 0;
 }
 
 
@@ -130,5 +167,44 @@ body {
   border: 1px solid white;
 }
 
+.sound-name{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+.sound-title{
+
+}
+
+.sound-exp{
+
+}
+
+.sound-session{
+  height: 100px;
+  width: 250px;
+  border-radius: 50px;
+
+  background-color: whitesmoke;
+  display: flex;
+  position: relative;
+  top: -100px;
+  left: 400px;
+}
+
+.session-posi{
+  display: flex;
+  position: relative;
+  left: 25%;
+  align-items: center;
+  text-decoration: none;
+}
 
 /* body部 */
+
+/* session 部 */
+.audio-wrapping{
+  margin: 50px auto 50px;
+}
+/* session 部 */

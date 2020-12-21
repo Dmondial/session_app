@@ -7,35 +7,41 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=M+PLUS+Rounded+1c:wght@900&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   </head>
 
   <body>
     <header>
       <div class="logo">Gg</div>
-      <div class="logo-title">Gig</div>
+      <div class="logo-title">GIGSOMATCH</div>
 
       <div class="signin-button">
         <% if signed_in? %>
        
         <!-- ログインしていたら以下を表示 -->
-          <div class="login-name">
-            <a href="#" ><%= "#{current_user.name}" %></a>
+          <div class="login-name header-button">
+            <a href="#" class="link" ><%= "#{current_user.name}" %></a>
           </div>
-          <div class="log-out">
-            <%= link_to "ログアウト", destroy_user_session_path ,method: :delete %>
+          <div class="log-out header-button">
+            <%= link_to "ログアウト", destroy_user_session_path ,method: :delete, class:"link" %>
           </div>
           <div class="tweet-button">
             <div class="tweet">
-              <%= link_to "投稿する", new_sound_path %>
+              <%= link_to new_sound_path , class:"link" do%>
+              
+              <i class="fas fa-paper-plane fa-3x"></i>
+              <% end %>
             </div>
           </div>
         <% else %>
            <!-- 未ログインなら以下を表示 -->
-          <div class="log-in">
-            <%= link_to "ログイン", new_user_session_path %>
+          <div class="log-in header-button">
+            <%= link_to "ログイン", new_user_session_path, class:"link" %>
           </div>
-          <div class="sign-in">
-            <%= link_to "新規登録", new_user_registration_path, class:"button" %>
+          <div class="sign-in header-button">
+            <%= link_to "新規登録", new_user_registration_path, class:"link" %>
           </div>
         <% end %>
       </div>
