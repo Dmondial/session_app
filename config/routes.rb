@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to:"sounds#index"
   devise_for :users
+  devise_scope :user do
+    match '/sessions/user', to: 'devise/sessions#create', via: :post
+  end
 
   resources :sounds do
    member do
