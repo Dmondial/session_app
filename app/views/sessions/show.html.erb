@@ -1,0 +1,27 @@
+<div class="middle-content">
+      <div class="sound-tweet">
+        <div class="user-name">
+          ユーザーの名前
+        </div>
+        <div class="sound-explain">
+          サウンドの説明
+        </div>
+        <div class="favo">★</div>
+      </div>
+
+      <div id="audio-wrap">
+        <input id="audio-play" type="button" value="PLAY"><input id="audio-pause" type="button" value="PAUSE">
+
+      </div>
+
+      <div class="sound-file">
+        <%= audio_tag("piano.mp3", autoplay: false, controls: true) %>
+        <% @sound.each do |s| %>
+          <p><%= s.user.name %>さんの投稿</p> 
+          <p><%=link_to s.title, sound_path(s.id) %></p> 
+          <p><%= s.explain %></p> 
+          <%= audio_tag(s.file.url, autoplay: true, controls: true) %>
+          <%= link_to "ダウンロード" , s.file.url %>
+        <% end %>
+      </div>
+    </div>

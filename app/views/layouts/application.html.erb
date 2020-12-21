@@ -10,6 +10,36 @@
   </head>
 
   <body>
+    <header>
+      <div class="logo">Gg</div>
+      <div class="logo-title">Gig</div>
+
+      <div class="signin-button">
+        <% if signed_in? %>
+       
+        <!-- ログインしていたら以下を表示 -->
+          <div class="login-name">
+            <a href="#" ><%= "#{current_user.name}" %></a>
+          </div>
+          <div class="log-out">
+            <%= link_to "ログアウト", destroy_user_session_path ,method: :delete %>
+          </div>
+          <div class="tweet-button">
+            <div class="tweet">
+              <%= link_to "投稿する", new_sound_path %>
+            </div>
+          </div>
+        <% else %>
+           <!-- 未ログインなら以下を表示 -->
+          <div class="log-in">
+            <%= link_to "ログイン", new_user_session_path %>
+          </div>
+          <div class="sign-in">
+            <%= link_to "新規登録", new_user_registration_path, class:"button" %>
+          </div>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

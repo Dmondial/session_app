@@ -4,30 +4,13 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <title>Gig</title>
+  <script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
 </head>
 <body>
-  <header>
-    <div class="logo"></div>
-
-    <div class="signin-button">
-      <!-- 未ログインなら以下を表示 -->
-      <div class="log-in">
-        <a href="#" class="button">ログイン</a>
-      </div>
-      <div class="sign-in">
-        <a href="#" class="button">新規登録</a>
-      </div>
-      <!-- ログインしていたら以下を表示 -->
-      <div class="log-out">
-        <a href="#" class="button">ログアウト</a>
-      </div>
-      <div class="tweet-button">
-        <div class="tweet">
-          <%= link_to "投稿する", new_sound_path %>
-        </div>
-      </div>
-    </div>
-  </header>
 
   <div class="contents">
     <div class="top-content">
@@ -35,26 +18,32 @@
     </div>
 
     <div class="search-content">
-      <form>検索フォーム</form>
+      <%= form_with(url: "#" , local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
     </div>
 
     <div class="middle-content">
       <div class="sound-tweet">
         <div class="user-name">
-          ユーザーの名前
+          
         </div>
         <div class="sound-explain">
-          サウンドの説明
+        
         </div>
-        <div class="favo">★</div>
+        <div class="favo"></div>
       </div>
       <div class="sound-file">
-        <audio class="audio-file">オーディオファイル</audio>
-        <%= audio_tag("piano.mp3", autoplay: false, controls: true) %>
         <% @sound.each do |s| %>
-          <p><%= s.user.name %>さんの投稿</p> 
-          <%= audio_tag(s.file.url, autoplay: false, controls: true) %>
-          <%= link_to "ダウンロード" , s.file.url %>
+          <div class="sound-content ">
+            <p><%= s.user.name %>さんの投稿</p> 
+            <p><%=link_to s.title, sound_path(s.id) %></p> 
+            <p><%= s.explain %></p> 
+            <%= audio_tag(s.file.url, autoplay: false, controls: true) %>
+            <p><%=link_to "#{s.title}とセッション", sound_for_session_path(s.id) %></p> 
+            <%#= link_to "ダウンロード" , s.file.url %>
+          </div>
         <% end %>
       </div>
     </div>

@@ -16,8 +16,8 @@
 
   <body>
 
-  <%= audio_tag(@audio.file.url, :autoplay => true, :controls => true) %>
-
+  <%# ファイル取得確認用コード↓ %>
+  <%# <%= audio_tag(@sound.file.url, autoplay: false, controls: true) %> 
 
     <!-- カーテン -->
     <div id="curtain">
@@ -36,7 +36,10 @@
     <div class="caption">入力（複数ファイル選択可能）</div>
     <div class="panel audio-in">
       <div class="file-wrapper">
-         <input type="file" id="wav-file" multiple>
+         <%# <input type="file" id="wav-file" multiple> %>
+        <%= form_with(model: @sound, id: "wav-file") do |f| %>
+          <%= f.collection_select(:sector_id, Sound.all, :file, :title, {:prompt => "Please Select a Sector"}, {:multiple => true}) %>
+        <% end %>
        
       </div>
     </div>
