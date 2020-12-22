@@ -22,6 +22,8 @@ function audio_sub() {
   const subSubButton = document.getElementById("sub-button")
   const audioFile = document.getElementById("audio_sub")
   subSubButton.addEventListener("click",() => {
+    const funny = document.getElementById("funny");
+    funny.removeAttribute("style");
     audioFile.currentTime = 0;
     audioFile.play();
     audioFile.addEventListener("ended",()=>{

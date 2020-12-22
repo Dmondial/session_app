@@ -1,6 +1,6 @@
 class SoundsController < ApplicationController
   def index
-    @sound = Sound.all
+    @sound = Sound.all.order("created_at DESC")
   end
 
   def new
