@@ -63,11 +63,9 @@ URLに遷移すれば既に投稿されている音声ファイルを視聴し�
 今時、動画で対応できた方良い。
 
 # 機能
-![move1]
-(https://raw.github.com/wiki/Dmondial/session_app/images/move1.gif)
+![move1](https://raw.github.com/wiki/Dmondial/session_app/images/move1.gif)
 
-![move2]
-(https://raw.github.com/wiki/Dmondial/session_app/images/move2.gif)
+![move2](https://raw.github.com/wiki/Dmondial/session_app/images/move2.gif)
 
 
 # 実装予定機能
