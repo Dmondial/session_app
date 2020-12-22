@@ -6,6 +6,7 @@
 
 
 # URL
+https://session-app-20201222.herokuapp.com/
 
 ## テスト用 アカウント
  
