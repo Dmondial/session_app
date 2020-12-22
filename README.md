@@ -8,6 +8,9 @@
 # URL
 https://session-app-20201222.herokuapp.com/
 
+## ベーシック認証
+- user: adminadmin
+- pass: 11112222
 ## テスト用 アカウント
 ### アカウント１
 - name: テスト 
