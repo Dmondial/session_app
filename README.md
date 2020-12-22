@@ -63,6 +63,10 @@ URLに遷移すれば既に投稿されている音声ファイルを視聴し�
 今時、動画で対応できた方良い。
 
 # 機能
+
+-一つ気になる投稿を選んで、一緒に再生させたい他のファイルを選ぶ
+-任意の複数のファイルを同時再生できる
+
 ![move1](https://raw.github.com/wiki/Dmondial/session_app/images/move1.gif)
 
 ![move2](https://raw.github.com/wiki/Dmondial/session_app/images/move2.gif)
