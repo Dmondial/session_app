@@ -15,7 +15,7 @@
   <body>
     <header>
       <div class="logo"><%= image_tag("/assets/title_logo.png", class: "header-logo" ) %></div>
-      <div class="logo-title">GIGSOMATCH</div>
+      <div class="logo-title"><%= link_to "GIGSOMATCH", root_path , class:"logo-deco" %></div>
 
       <div class="signin-button">
         <% if signed_in? %>

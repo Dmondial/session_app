@@ -54,6 +54,11 @@ header{
   font-family: 'Bungee', cursive;
 }
 
+.logo-deco{
+  text-decoration: none;
+  color: antiquewhite;
+}
+
 .signin-button{
   width: 300px;
   position: absolute;
