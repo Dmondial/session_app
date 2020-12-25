@@ -1,4 +1,20 @@
 class AudioFileUploader < CarrierWave::Uploader::Base
+  after :file, :delete_old_tmp_file
+
+  def sanitized_file
+    super
+  end
+
+  # remember the tmp file
+  def cache!(new_file = sanitized_file)
+    super
+    @old_tmp_file = new_file
+  end
+  
+  def delete_old_tmp_file(dummy)
+    @old_tmp_file.try :delete
+  end
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick

@@ -9,11 +9,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @session = Session.new(session_params)
+    if session_params[:sound_ids].length > 1
+      @session = Session.new(session_params)
+    else
+      @session = Session.new(room:session_params[:room], sound_ids: nil)
+    end
+
     if @session.save
       redirect_to session_path(@session.id)
     else
-      render :new
+      @sound = Sound.all
+      @title_id = @sound.find(params[:session][:sound_ids][0].to_i)
+      render :sound_for
     end
   end
 
@@ -24,6 +31,7 @@ class SessionsController < ApplicationController
 
   def sound_for
     @session = Session.new
+    @sound = Sound.all
   end
 
   private
