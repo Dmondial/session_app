@@ -1,4 +1,6 @@
 <%= form_with(model: sound, local: true) do |f|%>
+<%=  render 'error_messages', model: f.object %>
+
   <div class="field">
     <%= f.label :title, "タイトル" %><br />
     <%= f.text_field :title %>

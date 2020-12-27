@@ -1,6 +1,8 @@
 <div class='chat-room-form'>
   <h1>新規セッション</h1>
   <%=form_with(model: @session,local: true) do |f|%>
+  <%=  render '/sounds/error_messages', model: f.object %>
+
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
         <%= f.label :セッション名, class: 'chat-room-form__label'%>
@@ -13,16 +15,34 @@
     </div>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
-        <label class='chat-room-form__label' for='chat_room_チャットメンバー'>選曲</label>
+
+        <% if params[:id].present? %>
+          <label class='chat-room-form__label' for='chat_room_チャットメンバー'><%=@sound.find(params[:id]).title%>とセッションする曲を選んでください</label>
+        <% else %>
+          <label class='chat-room-form__label' for='chat_room_チャットメンバー'><%=@title_id.title%>とセッションする曲を選んでください</label>
+        <% end %>
+
       </div>
       <div class='chat-room-form__field--right'>
+        
         <select name="session[sound_ids][]" multiple>
-          <option value="">セッションする曲を選択してください</option>
-          <% Sound.where.not(id: params[:id] ).each do |sound| %>
-            <option value=<%= sound.id %>><%= sound.title %></option>
+          <%if params[:id].present? %>
+            <% @sound.where.not(id: params[:id] ).each do |sound| %>
+              <option value=<%= sound.id %>><%= sound.title %></option>
+            <% end %>
+          <% else %>
+            <% @sound.where.not(id: @title_id[:id] ).each do |sound| %>
+              <option value=<%= sound.id %>><%= sound.title %></option>
+            <% end %>
           <% end %>
         </select>
-        <input name="session[sound_ids][]" type="hidden" value=<%= params[:id] %>>
+
+        <% if params[:id].present? %>
+          <input name="session[sound_ids][]" type="hidden" value=<%= params[:id] %>>
+        <% else %>
+          <input name="session[sound_ids][]" type="hidden" value=<%= @title_id[:id] %>>
+        <% end %>
+        
       </div>
     </div>
     <div class='chat-room-form__field'>
