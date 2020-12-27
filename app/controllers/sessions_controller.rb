@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if (session_params[:sound_ids].length > 1) || (session_params[:sound_ids].length != nil)
+    if (session_params[:sound_ids].length > 1) && (session_params[:sound_ids].length != nil)
       @session = Session.new(session_params)
     else
       @session = Session.new(room:session_params[:room], sound_ids: nil)
