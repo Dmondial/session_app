@@ -1,0 +1,90 @@
+.mypage_content{
+
+  padding-top: 100px;
+
+  margin: auto;
+  background-color: burlywood;
+}
+
+.mypage_header{
+  width: 800px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: rgb(130, 139, 0);
+}
+
+.mypage_info{
+  background-color: darkmagenta;
+  width: 500px;
+  padding: 10px;
+}
+
+.mypage_icon{
+  background-color: greenyellow;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.mypage_nickname{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* .mypage_edit */
+
+.mypage_follow{
+  display: inline-block;
+  margin: auto 5px;
+}
+
+.mypage_follower{
+  display: inline-block;
+}
+
+
+
+.mypage_menu{
+  background-color:green;
+  display: flex;
+  flex-flow: column;
+  justify-content:space-around;
+
+}
+.mypage_dm{
+  background-color: hotpink;
+}
+.mypage_fav_sound{
+  background-color: lightblue;
+}
+.mypage_fav_session{
+  background-color: mediumpurple;
+}
+
+
+.mypage_body{
+  background-color: dimgrey;
+  width: 1000px;
+  margin: auto;
+  display: flex;
+}
+.mypage_sound{
+  background-color: mediumslateblue;
+  width: 50%;
+}
+.mypage_session{
+  background-color: moccasin;
+  width: 50%;
+}
+
+
+.mypage_sound_content{
+  border: 2px solid white;
+}
+.mypage_sound_user{}
+.mypage_sound-title{}
+.mypage_sound_exp{}
+.mypage_sound_session{}
+.mypage_session_posi{}

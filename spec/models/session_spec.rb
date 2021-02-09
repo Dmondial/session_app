@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Session, type: :model do
   before do
-    @session = FactoryBot.build(:session)
+    @session = FactoryBot.create(:session)
   end
 
   describe '新規セッション作成' do
