@@ -16,5 +16,7 @@ Rails.application.routes.draw do
       get 'sound_for'
     end
   end
+
+  resources :mypages ,only: :index
   
 end
