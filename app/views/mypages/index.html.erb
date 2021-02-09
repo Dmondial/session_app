@@ -8,7 +8,8 @@
             アイコン入れる
           </div>
           <div class="mypage_nickname">
-            自分のニックネーム
+            <%# 自分のニックネーム %>
+            <%= @user.name %> 
           </div>
           <div class="mypage_edit">
             <a href="#">マイページの編集ボタン</a>
@@ -42,6 +43,21 @@
       <div class="mypage_body">
         <div class="mypage_sound">
           自分の投稿したサウンド一覧
+
+          <div class="sound_temp">
+            <% @sound.each do |sound| %>
+              <div class="mypage_sound_content">
+                <p class="mypage_sound_user"><%= sound.user.name %>さんの投稿</p> 
+                <p><span>タイトル:</span><%=link_to sound.title, sound_path(sound.id) ,class:"sound-title"%></p> 
+                <p class="mypage_sound_exp"><span>説明:</span><%= sound.explain %></p> 
+                <%= audio_tag(sound.file.url, autoplay: false, controls: true) %>
+                <div class="mypage_sound_session">
+                  <%=link_to "#{sound.title}とセッション", sound_for_session_path(sound.id),class:"mypage_session_posi" %>
+                </div> 
+              </div>
+            <% end %>
+          </div>
+
         </div>
 
         <div class="mypage_session">

@@ -1,7 +1,7 @@
 .mypage_content{
 
   padding-top: 100px;
-  
+
   margin: auto;
   background-color: burlywood;
 }
@@ -78,3 +78,13 @@
   background-color: moccasin;
   width: 50%;
 }
+
+
+.mypage_sound_content{
+  border: 2px solid white;
+}
+.mypage_sound_user{}
+.mypage_sound-title{}
+.mypage_sound_exp{}
+.mypage_sound_session{}
+.mypage_session_posi{}
