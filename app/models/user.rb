@@ -7,4 +7,9 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :sounds
+  has_one :mypage
+  has_many :user_rooms
+  has_many :rooms ,through: :user_rooms
+  
+  
 end
