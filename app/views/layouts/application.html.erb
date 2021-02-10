@@ -22,7 +22,6 @@
        
         <!-- ログインしていたら以下を表示 -->
           <div class="login-name header-button">
-            <%# <a href="#" class="link" ><%= "#{current_user.name}" ></a> %>
             <%= link_to "#{current_user.name}", mypages_path ,method: :get, class:"link" %>
           </div>
           <div class="log-out header-button">
