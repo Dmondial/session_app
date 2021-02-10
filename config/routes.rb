@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :mypages ,only: :index
+  resources :rooms ,only: :index
   
 end
