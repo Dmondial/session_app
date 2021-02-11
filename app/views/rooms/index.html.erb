@@ -7,7 +7,7 @@
       </div>
 
       <div class="dm_new">
-        <a href="#">新しいメッセージ</a>
+        <%= link_to "新しいメッセージ", new_room_path %>
       </div>
 
 
@@ -20,8 +20,7 @@
                 アイコン
               </div>
               <div class="dm_friend_name">
-                <%  %>
-                <%= @user.find(n[:user_id]).name %>
+                <%= link_to @user.find(n[:user_id]).name , room_messages_path(n[:room_id]) %>
               </div>
               <div class="dm_friend_last_time">
                 2020年2月10日 
