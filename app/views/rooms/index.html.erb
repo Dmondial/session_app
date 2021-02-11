@@ -10,17 +10,22 @@
         <a href="#">新しいメッセージ</a>
       </div>
 
-      <div class="dm_friend_content">
-        <div class="dm_friend_icon">
-          アイコン
-        </div>
-        <div class="dm_friend_name">
-          dm先の名前が表示される
-        </div>
-        <div class="dm_friend_last_time">
-           2020年2月10日 
-        </div>
-      </div>
+      <% @user_room.each do |user_room|%>
+        <% if user_room[:user_id] != current_user.id %>
+          <div class="dm_friend_content">
+            <div class="dm_friend_icon">
+              アイコン
+            </div>
+            <div class="dm_friend_name">
+              <%= @user.find(user_room[:user_id]).name %>
+            </div>
+            <div class="dm_friend_last_time">
+              2020年2月10日 
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
     </div>
 
     <div class="dm_messages">

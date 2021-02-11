@@ -1,5 +1,8 @@
 class RoomsController < ApplicationController
   def index
+    @user_room = UserRoom.all
+    @room = Room.where(user_id: "#{current_user.id}")
+    @user = User.all
   end
 
   def new
@@ -9,7 +12,6 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    binding.pry
     if @room.save
       redirect_to rooms_path
     else
