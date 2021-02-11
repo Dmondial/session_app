@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
   def index
     @room = Room.all
-    # @want_to_room = UserRoom.where(user_id: current_user.id)
     @user_room = UserRoom.all
     @user = User.all
   end
