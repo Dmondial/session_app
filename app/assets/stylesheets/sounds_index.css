@@ -186,40 +186,61 @@ body {
 
 .sound-content{
   border: 1px solid white;
+  display: flex;
+  position: relative;
+  padding: 5px;
+}
+
+.sound-user-icon{
+  background-color: aqua;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+.sound-tweet{
+
 }
 
 .sound-name{
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
+.sound-main-sound{
+
+}
 
 .sound-title{
 
 }
 
 .sound-exp{
+  
+}
 
+.sound-tweet-service{
+  background-color: turquoise;
+  position: absolute;
+  right: 5px;
 }
 
 .sound-session{
-  height: 100px;
-  width: 250px;
+  /* height: ;
+  width: ; */
   border-radius: 50px;
 
   background-color: whitesmoke;
-  display: flex;
+  /* display: flex;
   position: relative;
   top: -100px;
-  left: 400px;
+  left: 400px; */
 }
 
-.session-posi{
-  display: flex;
-  position: relative;
-  left: 25%;
-  align-items: center;
-  text-decoration: none;
+.sound-fav{
+  background-color: rgb(117, 12, 12);
 }
 
 /* body部 */
