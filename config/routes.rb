@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   end
 
   resources :mypages ,only: :index
+  resources :rooms ,only: [:index,:new, :create] do
+    resources :messages ,only: [:index,:new, :create]
+  end
   
 end

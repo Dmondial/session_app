@@ -33,15 +33,41 @@
       <div class="sound-file">
         <% @sound.each do |s| %>
           <div class="sound-content ">
-          
-            <p class="sound-name"><%= s.user.name %>さんの投稿</p> 
-            <p><span>タイトル:</span><%=link_to s.title, sound_path(s.id) ,class:"sound-title"%></p> 
-            <p class="sound-exp"><span>説明:</span><%= s.explain %></p> 
-            <%= audio_tag(s.file.url, autoplay: false, controls: true) %>
-            <div class="sound-session">
-              <%=link_to "#{s.title}とセッション", sound_for_session_path(s.id),class:"session-posi" %>
-            </div> 
-            <%#= link_to "ダウンロード" , s.file.url %>
+
+            <div class="sound-user-icon">
+                アイコン
+            </div>
+
+            <div class="sound-tweet">
+            
+              <div class="sound-name">
+                <%= s.user.name %>さんの投稿
+              </div> 
+              <div class="sound-main-sound">
+                <div>
+                  タイトル:<%=link_to s.title, sound_path(s.id) ,class:"sound-title" %>
+                </div>
+                <div>
+                  <%= audio_tag(s.file.url, autoplay: false, controls: true) %>
+                </div>
+              </div> 
+              
+              <div class="sound-exp">
+                <span>説明:</span><%= s.explain %>
+              </div> 
+              
+            </div>
+
+            <div class="sound-tweet-service">
+              <div class="sound-session">
+                <%=link_to "#{s.title}とセッション", sound_for_session_path(s.id),class:"session-posi" %>
+              </div> 
+              <%#= link_to "ダウンロード" , s.file.url %>
+              <div class="sound-fav">
+                お気に入り
+              </div>
+            </div>
+
           </div>
         <% end %>
       </div>

@@ -1,0 +1,60 @@
+<div class="dm_contents">
+
+    <div class="dm_list">
+      <div class="dm_friend_search">
+        <input type="text" name="" value="検索する名前を入れてください" class="dm_search_text">
+        <input type="submit" value="検索" class="dm_search_submit">
+      </div>
+
+      <div class="dm_new">
+        <%= link_to "新しいメッセージ", new_room_path %>
+      </div>
+
+
+      <% current_user.rooms.each do |room|%>
+        <% @user_room.where(room_id:room[:id]).each do |n| %>
+          <% if n[:user_id] == current_user.id %>
+          <% else %>
+            <div class="dm_friend_content">
+              <div class="dm_friend_icon">
+                アイコン
+              </div>
+              <div class="dm_friend_name">
+                <%= link_to @user.find(n[:user_id]).name , room_messages_path(n[:room_id]) %>
+              </div>
+              <div class="dm_friend_last_time">
+                2020年2月10日 
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <div class="dm_messages">
+
+      <div class="dm_message_me">
+        <div class="dm_message">
+          会話の内容が表示される
+        </div>
+        <div class="dm_message_time">
+          2021年2月10日 17:50
+        </div>
+      </div>
+      <div class="dm_message_you">
+        <div class="dm_message">
+          会話の内容が表示される
+        </div>
+        <div class="dm_message_time">
+          2021年2月10日 17:50
+        </div>
+      </div>
+
+      <div class="dm_message_input">
+        <input type="text" name="" value="メッセージを作成" class="dm_message_text">
+        <input type="submit" value="送信" class="dm_message_submit">
+      </div>
+    </div>
+
+  </div>

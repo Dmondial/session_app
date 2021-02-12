@@ -1,0 +1,82 @@
+/* ↓DMコンテンツ全体 */
+.dm_contents{
+  background-color: purple;
+  padding-top: 80px;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+
+/* ↓DM先リスト部分 */
+.dm_list{
+  width: 400px;
+  height: 100vh;
+  background-color: aqua;
+}
+.dm_friend_search{
+  background-color: blue;
+}
+.dm_search_text{
+  width:300px;
+}
+.dm_search_submit{}
+.dm_friend_content{
+  background-color: brown;
+  display: flex;
+}
+.dm_friend_icon{
+  background-color: chartreuse;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dm_friend_name{
+
+  background-color: coral;
+}
+.dm_friend_last_time{
+  background-color: royalblue;
+}
+
+
+/* ↓メッセージ部分 */
+.dm_messages{
+  width: 600px;
+  height: 100vh;
+  background-color: darkgreen;
+}
+.dm_message{
+  background-color: darkkhaki;
+}
+
+.dm_message_me{
+  text-align: right;
+}
+.dm_message_you{}
+
+.dm_message_time{
+  background-color: darkorange;
+}
+.dm_message_input{
+  background-color: skyblue;
+  height: 60px;
+  width: 590px;
+  padding: 5px;
+
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dm_message_text{
+  width: 400px;
+  height: 40px;
+}
+.dm_message_submit{
+  width: 60px;
+  height: 30px;
+}
