@@ -120,20 +120,23 @@ header{
 /* body部 */
 
 body {
-  background-image: url("/images/bg_image.jpg");
+  /* background-image: url("/images/bg_image.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position:  top;
-  background-size: 100%;
+  background-size: 100%; */
   font-family: 'M PLUS Rounded 1c', sans-serif;
   }
 
 
 .contents{
-  position:absolute;
+  /* position:absolute;
   top: 80px;
   left: 10vw;
-  overflow: visible;
+  overflow: visible; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top-content{
@@ -142,6 +145,7 @@ body {
   align-items: center;
   height: 500px;
   width: 80vw;
+  margin-top: 80px;
 }
 
 .link-logo{

@@ -1,0 +1,2 @@
+module FavoriteSoundsHelper
+end
