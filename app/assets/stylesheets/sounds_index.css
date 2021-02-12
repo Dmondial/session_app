@@ -247,6 +247,16 @@ body {
   background-color: rgb(117, 12, 12);
 }
 
+.sound-fav-link{
+  
+}
+.sound-fav-link-form{
+
+}
+.sound-fav-link-form-submit{
+  visibility: hidden;
+}
+
 /* body部 */
 
 /* session 部 */
