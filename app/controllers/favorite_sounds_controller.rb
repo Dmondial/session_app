@@ -1,6 +1,8 @@
 class FavoriteSoundsController < ApplicationController
   def index
-    @sound = Sound.where(user_id: current_user.id)
+    @favorite_sound = FavoriteSound.where(user_id: current_user.id)
+    @favorite_sounds_new = FavoriteSound.new
+    @sound = Sound.all.order("created_at DESC")
   end
 
   def create
