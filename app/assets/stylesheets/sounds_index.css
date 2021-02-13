@@ -254,6 +254,10 @@ body {
 .sound-fav-button{
   cursor: pointer;
 }
+.sound-fav-button-del{
+  color: black;
+  background-color: violet;
+}
 .sound-fav-link-form{
 
 }
