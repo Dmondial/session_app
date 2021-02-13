@@ -65,8 +65,11 @@
               <%#= link_to "ダウンロード" , s.file.url %>
               <div class="sound-fav">
                 <div class="sound-fav-link" id="sound-fav-link">
-                  <button class="sound-fav-button">お気に入り
 
+            
+                <% if @favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).empty?%>
+                  <a class="sound-fav-button">
+                    お気に入り
                     <%= form_with model: @favorite_sounds_new, class: 'sound-fav-link-form', id: 'sound-fav-link-form', local: true do |f| %>
                       <div class="form-input">
                         <%= f.hidden_field :user_id, value: current_user.id %>
@@ -77,10 +80,16 @@
                       <% f.submit '送信', class: 'sound-fav-link-form-submit', id: 'sound-fav-link-form-submit' %>
                     <% end %>
 
-                  </button>
+                  </a>
+                <% else %>
+                  <a class="sound-fav-button-del">
+                    お気に入り
+                    <%= link_to 'お気に入り', favorite_sound_path(@favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).ids[0]), method: :delete %>
+                    
+                  </a>
+                <% end %>
 
                 </div>
-                <%#= link_to 'お気に入り', favorite_sounds_path, method: :post, params: { user_id: s.user_id, sound_id: s.id, favorite: true} %>
               </div>
             </div>
 

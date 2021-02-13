@@ -6,7 +6,7 @@ function link_form(){
       var e = e || window.event;
       var elem = e.target || e.srcElement;
       var elemForm = elem.children[0];
-      console.log(elemForm);
+      console.log(e);
       elemForm.submit();
     });
   });

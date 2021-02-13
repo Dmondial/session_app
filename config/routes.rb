@@ -22,6 +22,6 @@ Rails.application.routes.draw do
     resources :messages ,only: [:index,:new, :create]
   end
 
-  resources :favorite_sounds , only: [:index, :create, :update]
+  resources :favorite_sounds , only: [:index, :create, :destroy]
   
 end

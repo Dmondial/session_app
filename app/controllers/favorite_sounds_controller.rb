@@ -4,14 +4,23 @@ class FavoriteSoundsController < ApplicationController
   end
 
   def create
-    binding.pry
+    @favorite_sound = FavoriteSound.new(favorite_sounds_params)
+    if @favorite_sound.save
+      redirect_to root_path
+    else
+      render root_path
+    end
   end
 
-  def update
+  def destroy
+    @favorite_sound = FavoriteSound.find(params[:id])
+    if  @favorite_sound.destroy
+      redirect_to root_path
+    end
   end
 
   private
-  # def favorite_sounds_params
-  #   params.require(:favorite_sound).permit(:user_id, :sound_id, :favorite)
-  # end
+  def favorite_sounds_params
+    params.require(:favorite_sound).permit(:user_id, :sound_id, :favorite)
+  end
 end

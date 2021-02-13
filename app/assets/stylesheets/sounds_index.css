@@ -250,6 +250,10 @@ body {
 .sound-fav-link{
   
 }
+
+.sound-fav-button{
+  cursor: pointer;
+}
 .sound-fav-link-form{
 
 }
