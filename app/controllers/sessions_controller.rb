@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  
+  
   def index
     @sound = Sound.find(params(:sound_ids))
   end

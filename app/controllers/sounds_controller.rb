@@ -1,4 +1,6 @@
 class SoundsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  
   def index
     @sound = Sound.all.order("created_at DESC")
     @favorite_sound = FavoriteSound.all

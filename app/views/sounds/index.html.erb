@@ -58,37 +58,40 @@
               
             </div>
 
-            <div class="sound-tweet-service">
-              <div class="sound-session">
-                <%=link_to "#{s.title}とセッション", sound_for_session_path(s.id),class:"session-posi" %>
-              </div> 
-              <%#= link_to "ダウンロード" , s.file.url %>
-              <div class="sound-fav">
-                <div class="sound-fav-link" id="sound-fav-link">
-
             
-                  <% if @favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).empty?%>
-                    <a class="sound-fav-button">
-                      お気に入り
-                      <%= form_with model: @favorite_sounds_new, class: 'sound-fav-link-form', id: 'sound-fav-link-form', local: true do |f| %>
-                        <div class="form-input">
-                          <%= f.hidden_field :user_id, value: current_user.id %>
-                          <%= f.hidden_field :sound_id, value: s.id %>
-                          <%= f.hidden_field :favorite, value: true %>
-                          
-                        </div>
-                        <% f.submit '送信', class: 'sound-fav-link-form-submit', id: 'sound-fav-link-form-submit' %>
+              <div class="sound-tweet-service">
+                <% if user_signed_in? %>
+                  <div class="sound-session">
+                    <%=link_to "#{s.title}とセッション", sound_for_session_path(s.id),class:"session-posi" %>
+                  </div> 
+                  <%#= link_to "ダウンロード" , s.file.url %>
+                  <div class="sound-fav">
+                    <div class="sound-fav-link" id="sound-fav-link">
+
+                
+                      <% if @favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).empty?%>
+                        <a class="sound-fav-button">
+                          お気に入り
+                          <%= form_with model: @favorite_sounds_new, class: 'sound-fav-link-form', id: 'sound-fav-link-form', local: true do |f| %>
+                            <div class="form-input">
+                              <%= f.hidden_field :user_id, value: current_user.id %>
+                              <%= f.hidden_field :sound_id, value: s.id %>
+                              <%= f.hidden_field :favorite, value: true %>
+                              
+                            </div>
+                            <% f.submit '送信', class: 'sound-fav-link-form-submit', id: 'sound-fav-link-form-submit' %>
+                          <% end %>
+
+                        </a>
+                      <% else %>
+                          <%= link_to 'お気に入り済み', favorite_sound_path(@favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).ids[0]),class: "sound-fav-button-del", method: :delete %>
                       <% end %>
 
-                    </a>
-                  <% else %>
-                      <%= link_to 'お気に入り済み', favorite_sound_path(@favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).ids[0]),class: "sound-fav-button-del", method: :delete %>
-                  <% end %>
-
-                </div>
+                    </div>
+                  </div>
+                <% end %>
               </div>
-            </div>
-
+            
           </div>
         <% end %>
       </div>

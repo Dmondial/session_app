@@ -1,4 +1,6 @@
 class MypagesController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
+
   def index
     @user = User.find(current_user[:id])
     @sound = Sound.where(user_id: current_user[:id])
