@@ -62,7 +62,43 @@
         </div>
 
         <div class="mypage_session">
-          自分がチョイスしたセッション一覧
+
+          自分の音源が入っているセッション一覧
+          <% @session.each do |session| %>
+            <% if session.sounds.where(user_id: current_user.id).present? %>
+          
+              <div class="mypage_session_content">
+                
+                <div class="mypage_session_info">
+                  <div class="mypage_session_title">
+                    タイトルが入る
+                    <%= session.room %>
+                  </div>
+                  <div class="mypage_session_exp">
+                    説明が入る
+                    <%# sessionテーブルに説明のカラムを追加する %>
+                  </div>
+                  <div class="mypage_session_sound_name">
+                    <% @session_sound.each do |session_sound| %>
+                      <% if session_sound.session_id == session.id %>
+                        <div>
+                        ● <%= session_sound.sound[:title] %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="mypage_session_sound_control">
+                  <button>play</button>
+                  <button>stop</button>
+                  <button>pause</button>
+                </div>
+
+              </div>
+            <% end %>
+          <% end %>
+
         </div>
       </div>
 

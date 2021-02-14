@@ -88,3 +88,31 @@
 .mypage_sound_exp{}
 .mypage_sound_session{}
 .mypage_session_posi{}
+
+
+
+/* ↓セッション一覧部分 */
+.mypage_session{}
+.mypage_session_content{
+  background-color:blueviolet;
+  border: solid 2px darkgray ;
+  margin: 5px;
+  display: flex;
+}
+.mypage_session_info{
+  width: 50%;
+}
+.mypage_session_title{
+  background-color: brown;
+}
+.mypage_session_exp{
+  background-color: darkcyan;
+}
+.mypage_session_sound_name{
+  margin: 10px;
+}
+.mypage_session_sound_control{
+  width: 50%;
+  background-color: cyan;
+}
+
