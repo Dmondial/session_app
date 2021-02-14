@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   resources :rooms ,only: [:index,:new, :create] do
     resources :messages ,only: [:index,:new, :create]
   end
+
+  resources :favorite_sounds , only: [:index, :create, :destroy]
   
 end

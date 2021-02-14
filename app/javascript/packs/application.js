@@ -10,6 +10,7 @@ require("channels")
 require("../daw")
 require("../play")
 require("../login")
+require("../link_form")
 
 //= require audiojs
 

@@ -27,6 +27,8 @@ class SessionsController < ApplicationController
   def show
     @session = Session.find(params[:id])
     @sound = @session.sounds
+    @favorite_sound = FavoriteSound.where(user_id: current_user.id)
+    @favorite_sounds_new = FavoriteSound.new
   end
 
   def sound_for
