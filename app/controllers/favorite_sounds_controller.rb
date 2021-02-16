@@ -18,8 +18,12 @@ class FavoriteSoundsController < ApplicationController
 
   def destroy
     @favorite_sound = FavoriteSound.find(params[:id])
+    favorite_sound = @favorite_sound
     if  @favorite_sound.destroy
-      redirect_to root_path
+      # render json:{ user_id: @favorite_sound.user_id, sound_id: @favorite_sound.sound_id }
+      # render json:{ favorite_sound: favorite_sound }
+    else
+      render root_path
     end
   end
 

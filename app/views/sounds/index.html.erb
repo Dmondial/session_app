@@ -84,7 +84,7 @@
 
                         </a>
                       <% else %>
-                          <%= link_to 'お気に入り済み', favorite_sound_path(@favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).ids[0]),class: "sound-fav-button-del", method: :delete %>
+                          <%= link_to 'お気に入り済み', favorite_sound_path(@favorite_sound.where(user_id: current_user.id).where(sound_id: s.id).ids[0]),class: "sound-fav-button-del", method: :delete ,data:{user_id: current_user.id, sound_id: s.id } %>
                       <% end %>
 
                     </div>

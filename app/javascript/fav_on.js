@@ -37,4 +37,6 @@ function fav_on(){
 
 };
 
-window.addEventListener("load", link_form)
+window.addEventListener("load", fav_on);
+
+// setInterval(check, 1000);
