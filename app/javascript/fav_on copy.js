@@ -1,17 +1,15 @@
 function fav_on(){
-  const soundFavButton = document.querySelectorAll(".sound-fav-link-form");
+  const soundFavButton = document.querySelectorAll(".sound-fav-button");
 
   soundFavButton.forEach(function(t){
-    const submit = t[4] 
-    console.log(submit);
     t.addEventListener("click",(e) => {
       e.preventDefault();
-      // var e = e || window.event;
-      // var elem = e.target || e.srcElement;
-      // var elemForm = elem.children[0];
-      // console.log(elem);
+      var e = e || window.event;
+      var elem = e.target || e.srcElement;
+      var elemForm = elem.children[0];
+      console.log(elem);
       // elemForm.submit();
-      const formData = new FormData(t);
+      const formData = new FormData(elemForm);
       const XHR = new XMLHttpRequest();
       XHR.open("POST", "/favorite_sounds" , true);
       XHR.responseType = "json";
@@ -40,6 +38,6 @@ function fav_on(){
 
 };
 
-// window.addEventListener("load", fav_on);
+window.addEventListener("load", fav_on);
 
-setInterval(fav_on, 1000);
+// setInterval(check, 1000);
