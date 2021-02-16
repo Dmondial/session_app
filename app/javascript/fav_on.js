@@ -1,4 +1,4 @@
-function link_form(){
+function fav_on(){
   const soundFavButton = document.querySelectorAll(".sound-fav-button");
 
   soundFavButton.forEach(function(t){
