@@ -9,7 +9,8 @@ class FavoriteSoundsController < ApplicationController
   def create
     @favorite_sound = FavoriteSound.new(favorite_sounds_params)
     if @favorite_sound.save
-      redirect_to root_path
+      # redirect_to root_path
+      render json:{ favorite_sound: @favorite_sound }
     else
       render root_path
     end
