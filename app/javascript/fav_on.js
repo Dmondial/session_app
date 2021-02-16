@@ -17,10 +17,10 @@ function fav_on(){
       XHR.responseType = "json";
       XHR.send(formData);
       XHR.onload = () => {
-      if (XHR.status != 200) {
-        alert(`Error ${XHR.status}: ${XHR.statusText}`);
-        return null;
-      }
+      // if (XHR.status != 200) {
+      //   alert(`Error ${XHR.status}: ${XHR.statusText}`);
+      //   return null;
+      // }
       const item = XHR.response.favorite_sound;
       // const list = document.getElementById("list");
       let oya = t.parentNode;
