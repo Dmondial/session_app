@@ -35,7 +35,8 @@
             <a href="#">自分のお気に入りした曲一覧へのリンク</a>
           </div>
           <div class="mypage_fav_session">
-            <a href="#">自分のお気に入りしたセッション一覧へのリンク</a>
+            <%= link_to "セッション一覧", sessions_path %>
+            <a href="#">セッション一覧へのリンク</a>
           </div>
         </div>
 
@@ -63,7 +64,7 @@
 
         <div class="mypage_session">
 
-          自分の音源が入っているセッション一覧
+          自分が入っているセッション一覧
           <% @session.each do |session| %>
             <% if session.sounds.where(user_id: current_user.id).present? %>
           
@@ -93,6 +94,10 @@
                   <button>play</button>
                   <button>stop</button>
                   <button>pause</button>
+                </div>
+
+                <div class="mypage_session_sound_del">
+                  <%= link_to "このセッションを削除", session_path(session.id), method: :delete %>
                 </div>
 
               </div>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :sessions  do
+  resources :sessions   do
     member do
       get 'sound_for'
     end

@@ -1,0 +1,42 @@
+<div class="session_index_body">
+
+  <div class="session_index_title">
+    <h2>セッション一覧</h2>
+  </div>
+
+  <div class="session_index_search">
+    <form>
+      <input type="text">
+      <input type="submit" value="検索">
+    </form>
+  </div>
+
+  <% @session.each do |session| %>
+    <div class="session_index_content">
+
+      <div class="session_index_content_info">
+        <div class="session_index_content_title">
+          <%= link_to "#{session.room}",  session_path(session.id) %>
+        </div>
+          <% session.sounds.each do |sound| %>
+            <div class="session_index_content_sounds">
+              ● <%= sound.title %>
+            </div>
+          <% end %>
+      </div>
+
+      <div class="session_index_content_control">
+        <div class="session_index_content_control_play">
+          <input type="button" value="play">
+        </div>
+        <div class="session_index_content_control_stop">
+          <input type="button" value="stop">
+        </div>
+        <div class="session_index_content_control_pause">
+          <input type="button" value="pause">
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+</div>
