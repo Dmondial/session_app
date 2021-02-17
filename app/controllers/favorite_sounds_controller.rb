@@ -1,6 +1,6 @@
 class FavoriteSoundsController < ApplicationController
   before_action :authenticate_user!
-  # protect_from_forgery
+  protect_from_forgery
   def index
     @favorite_sound = FavoriteSound.where(user_id: current_user.id)
     @favorite_sounds_new = FavoriteSound.new
