@@ -12,6 +12,7 @@ require("../play")
 require("../login")
 require("../fav_on")
 require("../fav_off")
+require("../audio_control")
 
 //= require audiojs
 

@@ -3,10 +3,9 @@
   flex-direction: column;
   align-items: center;
   padding-top: 100px;
-
 }
 
-.session_index_title{;
+.session_index_title{
 }
 
 .session_index_search{
@@ -30,8 +29,12 @@
 .session_index_content_title{
   background-color: brown;
 }
-.session_index_content_sounds{background-color: cadetblue;}
-
+.session_index_content_sounds{
+  background-color: cadetblue;
+}
+.session_index_sound{
+  display: none;
+}
 .session_index_content_control{
   background-color: crimson;
   display: flex;
