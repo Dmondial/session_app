@@ -3,36 +3,10 @@ function fav_off(){
 
   soundFavDelButton.forEach(function(t){
     t.addEventListener("click",(e) => {
-      // e.preventDefault();
-      // e.stopPropagation();
-      // var e = e || window.event;
-      // var elem = e.target || e.srcElement;
-      // var elemForm = elem.children[0];
-      // console.log(elem);
-      // elemForm.submit();
-      // const delId = elem.getAttribute("data-id");
-      // console.log(t);
-      // const XHR = new XMLHttpRequest();
-      // XHR.open("POST", `/favorite_sounds/${delId}` , true);
-      // XHR.responseType = "json";
-      // debugger;
-      // XHR.send();
-      // debugger;
-      // XHR.onload = () => {
-      //   if (XHR.status != 200) {
-      //     console.log(XHR.response);
-      //     alert(`Error ${XHR.status}: ${XHR.statusText}`);
-      //     return null;
-      //   }
-        // const item = XHR.response.favorite_sound;
         const userId = t.parentNode.getAttribute("data-user-id");
         const soundId = t.parentNode.getAttribute("data-sound-id");
-        console.log(userId);
-        console.log(soundId);
         
-        // const list = document.getElementById("list");
         let oya = t.parentNode;
-        // const formText = document.getElementById("content");
         const HTML = `
             <form id="sound-fav-link-form" class="sound-fav-link-form" action="/favorite_sounds"  method="post"><input type="hidden" name="authenticity_token" value="cAzVfDmcPA0IaogmfikAhUPXoAxTHHje/ODA/B7qN0nDXWI5v1RAojY/NH7E3+8TcsHUTaxmTgXdPjkeNZynnA==">
               <div class="form-input">
@@ -47,10 +21,7 @@ function fav_off(){
           oya.removeChild(oya.lastChild);
         }
         oya.insertAdjacentHTML("afterbegin", HTML);
-        // formText.value = "";
-      // };
       
-
     });
   });
 

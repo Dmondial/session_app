@@ -16,6 +16,10 @@ class SessionsController < ApplicationController
     else
       @session = Session.new(room:session_params[:room], sound_ids: nil)
     end
+    binding.pry
+
+    @session_all = SessionSound.all
+
 
     if @session.save
       redirect_to session_path(@session.id)
