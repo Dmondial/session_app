@@ -1,7 +1,7 @@
 <div class="session_index_body">
 
   <div class="session_index_title">
-    <h2>セッション一覧</h2>
+    <h1>セッション一覧</h1>
   </div>
 
   <div class="session_index_search">
@@ -9,6 +9,10 @@
       <input type="text">
       <input type="submit" value="検索">
     </form>
+  </div>
+
+  <div class="session_index_link_sounds">
+    <%= link_to "サウンド一覧へ", sessions_path %>
   </div>
 
   <% @session.each do |session| %>

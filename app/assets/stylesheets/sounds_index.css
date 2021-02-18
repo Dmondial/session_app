@@ -173,6 +173,14 @@ body {
   height: 50px;
 }
 
+.sound_index_link_session{
+  background-color: antiquewhite;
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+}
+
 .middle-content{
 
   height: 100px;
@@ -226,9 +234,13 @@ body {
 }
 
 .sound-tweet-service{
-  background-color: turquoise;
+  /* background-color: turquoise; */
   position: absolute;
   right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .sound-session{
@@ -244,7 +256,7 @@ body {
 }
 
 .sound-fav{
-  background-color: rgb(117, 12, 12);
+  /* background-color: rgb(117, 12, 12); */
 }
 
 .sound-fav-link{
