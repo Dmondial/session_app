@@ -1,11 +1,10 @@
-
 <div class='sound_for_form'>
-
+  <h1>新規セッション</h1>
   <%=form_with(model: @session,local: true) do |f|%>
   <%=  render '/sounds/error_messages', model: f.object %>
 
     <div class='sound_for_form__field'>
-      <div class='sound_for_form__field--left'>
+      <div class='sound_for_form__field_title'>
         <%= f.label :セッション名, class: 'chat-room-form__label'%>
       </div>
       <div class='sound_for_form__field--right'>
@@ -17,25 +16,25 @@
       <div class='sound_for_form__field--left'>
 
         <% if params[:id].present? %>
-          <label class='sound_for_form__label' for='chat_room_チャットメンバー'><%=@sound.find(params[:id]).title%>とセッションする曲を選んでください</label>
+          <label class='sound_for_form__label' for='chat_room_チャットメンバー'><span class="sound_for_form__label_main"><%=@sound.find(params[:id]).title%></span>とセッションする曲を選んでください</label>
         <% else %>
           <label class='sound_for_form__label' for='chat_room_チャットメンバー'><%=@title_id.title%>とセッションする曲を選んでください</label>
         <% end %>
 
       </div>
-      <div class='sound_for_form__field--right'>
+      <div class='sound_for_form__field_checkbox'>
         
-        <select name="session[sound_ids][]" multiple>
+        <%# <select name="session[sound_ids][]" multiple> %>
           <%if params[:id].present? %>
             <% @sound.where.not(id: params[:id] ).each do |sound| %>
-              <option value=<%= sound.id %>><%= sound.title %></option>
+              <input type="checkbox" name="session[sound_ids][]" value=<%= sound.id %>><%= sound.title %>
             <% end %>
           <% else %>
             <% @sound.where.not(id: @title_id[:id] ).each do |sound| %>
-              <option value=<%= sound.id %>><%= sound.title %></option>
+              <input type="checkbox" name="session[sound_ids][]" value=<%= sound.id %>><%= sound.title %>
             <% end %>
           <% end %>
-        </select>
+        <%# </select> %>
 
         <% if params[:id].present? %>
           <input name="session[sound_ids][]" type="hidden" value=<%= params[:id] %>>
