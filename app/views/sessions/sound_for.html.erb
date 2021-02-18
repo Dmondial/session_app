@@ -1,55 +1,56 @@
-<div class='chat-room-form'>
-  <h1>新規セッション</h1>
-  <%=form_with(model: @session,local: true) do |f|%>
-  <%=  render '/sounds/error_messages', model: f.object %>
+<div class="sound_for_content">
+  <div class='sound_for_form'>
+    <h1>新規セッション</h1>
+    <%=form_with(model: @session,local: true) do |f|%>
+    <%=  render '/sounds/error_messages', model: f.object %>
 
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :セッション名, class: 'chat-room-form__label'%>
+      <div class='sound_for_form__field'>
+        <div class='sound_for_form__field_title'>
+          <%= f.label :セッション名, class: 'chat-room-form__label'%>
+        </div>
+        <div class='sound_for_form__field--right'>
+          <%= f.text_field :room, class: 'session_room_name sound_for_form__input', placeholder: 'チャットルーム名を入力してください'%>
+        </div>
       </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :room, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
-      </div>
-    </div>
-    <div class='chat-room-form__field'>
-    </div>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
+      
+      <div class='sound_for_form__field'>
+        <div class='sound_for_form__field--left'>
 
-        <% if params[:id].present? %>
-          <label class='chat-room-form__label' for='chat_room_チャットメンバー'><%=@sound.find(params[:id]).title%>とセッションする曲を選んでください</label>
-        <% else %>
-          <label class='chat-room-form__label' for='chat_room_チャットメンバー'><%=@title_id.title%>とセッションする曲を選んでください</label>
-        <% end %>
-
-      </div>
-      <div class='chat-room-form__field--right'>
-        
-        <select name="session[sound_ids][]" multiple>
-          <%if params[:id].present? %>
-            <% @sound.where.not(id: params[:id] ).each do |sound| %>
-              <option value=<%= sound.id %>><%= sound.title %></option>
-            <% end %>
+          <% if params[:id].present? %>
+            <label class='sound_for_form__label' for='chat_room_チャットメンバー'><span class="sound_for_form__label_main"><%=@sound.find(params[:id]).title%></span>とセッションする曲を選んでください</label>
           <% else %>
-            <% @sound.where.not(id: @title_id[:id] ).each do |sound| %>
-              <option value=<%= sound.id %>><%= sound.title %></option>
-            <% end %>
+            <label class='sound_for_form__label' for='chat_room_チャットメンバー'><%=@title_id.title%>とセッションする曲を選んでください</label>
           <% end %>
-        </select>
 
-        <% if params[:id].present? %>
-          <input name="session[sound_ids][]" type="hidden" value=<%= params[:id] %>>
-        <% else %>
-          <input name="session[sound_ids][]" type="hidden" value=<%= @title_id[:id] %>>
-        <% end %>
-        
+        </div>
+        <div class='sound_for_form__field_checkbox'>
+          
+          <%# <select name="session[sound_ids][]" multiple> %>
+            <%if params[:id].present? %>
+              <% @sound.where.not(id: params[:id] ).each do |sound| %>
+                <input type="checkbox" name="session[sound_ids][]" value=<%= sound.id %>><%= sound.title %>
+              <% end %>
+            <% else %>
+              <% @sound.where.not(id: @title_id[:id] ).each do |sound| %>
+                <input type="checkbox" name="session[sound_ids][]" value=<%= sound.id %>><%= sound.title %>
+              <% end %>
+            <% end %>
+          <%# </select> %>
+
+          <% if params[:id].present? %>
+            <input name="session[sound_ids][]" type="hidden" value=<%= params[:id] %>>
+          <% else %>
+            <input name="session[sound_ids][]" type="hidden" value=<%= @title_id[:id] %>>
+          <% end %>
+          
+        </div>
       </div>
-    </div>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'></div>
-      <div class='chat-room-form__field--right'>
-        <%= f.submit class: 'chat-room-form__action-btn'%>
+      <div class='sound_for_form__field'>
+        <div class='sound_for_form__field--left'></div>
+        <div class='sound_for_form__field--right'>
+          <%= f.submit class: 'sound_for_form__action-btn'%>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

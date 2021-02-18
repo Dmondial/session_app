@@ -1,0 +1,55 @@
+
+<div class='sound_for_form'>
+
+  <%=form_with(model: @session,local: true) do |f|%>
+  <%=  render '/sounds/error_messages', model: f.object %>
+
+    <div class='sound_for_form__field'>
+      <div class='sound_for_form__field--left'>
+        <%= f.label :セッション名, class: 'chat-room-form__label'%>
+      </div>
+      <div class='sound_for_form__field--right'>
+        <%= f.text_field :room, class: 'session_room_name sound_for_form__input', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+    </div>
+    
+    <div class='sound_for_form__field'>
+      <div class='sound_for_form__field--left'>
+
+        <% if params[:id].present? %>
+          <label class='sound_for_form__label' for='chat_room_チャットメンバー'><%=@sound.find(params[:id]).title%>とセッションする曲を選んでください</label>
+        <% else %>
+          <label class='sound_for_form__label' for='chat_room_チャットメンバー'><%=@title_id.title%>とセッションする曲を選んでください</label>
+        <% end %>
+
+      </div>
+      <div class='sound_for_form__field--right'>
+        
+        <select name="session[sound_ids][]" multiple>
+          <%if params[:id].present? %>
+            <% @sound.where.not(id: params[:id] ).each do |sound| %>
+              <option value=<%= sound.id %>><%= sound.title %></option>
+            <% end %>
+          <% else %>
+            <% @sound.where.not(id: @title_id[:id] ).each do |sound| %>
+              <option value=<%= sound.id %>><%= sound.title %></option>
+            <% end %>
+          <% end %>
+        </select>
+
+        <% if params[:id].present? %>
+          <input name="session[sound_ids][]" type="hidden" value=<%= params[:id] %>>
+        <% else %>
+          <input name="session[sound_ids][]" type="hidden" value=<%= @title_id[:id] %>>
+        <% end %>
+        
+      </div>
+    </div>
+    <div class='sound_for_form__field'>
+      <div class='sound_for_form__field--left'></div>
+      <div class='sound_for_form__field--right'>
+        <%= f.submit class: 'sound_for_form__action-btn'%>
+      </div>
+    </div>
+  <% end %>
+</div>
