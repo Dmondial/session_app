@@ -6,14 +6,24 @@
         <div class="sound-explain">
         
         </div>
-        <div class="favo">★</div>
+        <div class="favo"></div>
+      </div>
+      <div class="session_show_title">
+
+        <div class="session_show_title_exp">
+          セッション名:
+        </div>
+        <div class="session_show_title_name">
+          <%= @session.room %>
+        </div>
+
       </div>
 
       <div id="audio-wrap" class="audio-wrapping">
         <div><span>サウンドのオールプレイ・オールストップ</span></div>
-        <input id="audio-play" type="button" value="PLAY">
-        <input id="audio-pause" type="button" value="PAUSE">
-        <input id="audio-reset" type="button" value="RESET">
+        <input id="audio-play" type="button" value="PLAY" class="audio-play">
+        <input id="audio-pause" type="button" value="PAUSE" class="audio-pause">
+        <input id="audio-reset" type="button" value="RESET" class="audio-reset">
 
       </div>
 

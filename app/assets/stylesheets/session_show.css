@@ -3,19 +3,25 @@
   text-align: center;
 }
 
-#audio-play{
+.session_show_title{}
+.session_show_title_exp{}
+.session_show_title_name{
+  font-size: 40px;
+}
+
+.audio-play{
   height: 50px;
   width: 100px;
   margin-right: 10px;
 }
 
-#audio-pause{
+.audio-pause{
   height: 50px;
   width: 100px;
   margin-right: 10px;
 }
 
-#audio-reset{
+.audio-reset{
   height: 50px;
   width: 100px;
 }

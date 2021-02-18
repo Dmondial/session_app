@@ -17,14 +17,15 @@
 /* ↓コンテンツ部 */
 .session_index_content{
   background-color: blueviolet;
-  width: 600px;
+  width: 600px ;
   border: solid 2px whitesmoke;
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
 .session_index_content_info{
   background-color: greenyellow;
-  width: 400px;
+  width: 200px;
 }
 .session_index_content_title{
   background-color: brown;

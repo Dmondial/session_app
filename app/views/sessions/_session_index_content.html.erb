@@ -1,0 +1,25 @@
+<div class="session_index_content">
+  <div class="session_index_content_info">
+    <div class="session_index_content_title">
+      <%= link_to "#{session.room}",  session_path(session.id) %>
+    </div>
+      <% session.sounds.each do |sound| %>
+        <div class="session_index_content_sounds">
+          ● <%= sound.title %>
+        </div>
+        <%= audio_tag(sound.file.url, autoplay: false, controls: true ,class:"session_index_sound") %>
+      <% end %>
+  </div>
+
+  <div class="session_index_content_control">
+    <div class="session_index_content_control_play">
+      <input type="button" value="play" id="audio-play" class="audio-play">
+    </div>
+    <div class="session_index_content_control_stop">
+      <input type="button" value="pause" id="audio-pause" class="audio-pause">
+    </div>
+    <div class="session_index_content_control_pause">
+      <input type="button" value="reset" id="audio-reset" class="audio-reset">
+    </div>
+  </div>
+</div>
