@@ -32,11 +32,9 @@
           </div>
           <div class="mypage_fav_sound">
             <%= link_to "お気に入り一覧", favorite_sounds_path %>
-            <a href="#">自分のお気に入りした曲一覧へのリンク</a>
           </div>
           <div class="mypage_fav_session">
             <%= link_to "セッション一覧", sessions_path %>
-            <a href="#">セッション一覧へのリンク</a>
           </div>
         </div>
 
@@ -72,9 +70,7 @@
                 
                 <%= render partial: "/sessions/session_index_content", locals: {session: session} %>
 
-                <div class="mypage_session_sound_del">
-                  <%= link_to "このセッションを削除", session_path(session.id), method: :delete %>
-                </div>
+                
 
               </div>
             <% end %>

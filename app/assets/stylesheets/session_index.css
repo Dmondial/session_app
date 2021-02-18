@@ -16,7 +16,7 @@
 
 /* ↓コンテンツ部 */
 .session_index_content{
-  background-color: blueviolet;
+  background-color: rgba(232, 238, 177, 0.801) ;
   width: 600px ;
   border: solid 2px whitesmoke;
   display: flex;
@@ -29,18 +29,35 @@
 }
 .session_index_content_title{
   background-color: brown;
+  text-align: center;
+  padding: 5px;
 }
 .session_index_content_sounds{
+  background-color:rgb(184, 113, 113);
+  padding: 5px ;
+}
+.session_index_content_sound{
   background-color: cadetblue;
 }
 .session_index_sound{
   display: none;
 }
 .session_index_content_control{
-  background-color: crimson;
-  display: flex;
-  justify-content: space-around;
+  /* background-color: crimson; */
+  
+}
+.session_index_content_button_exp{
+  margin: 0 0 5px 10px;
+
+}
+.session_index_content_buttons{
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: space-around;
 }
 .session_index_content_control_play{}
 .session_index_content_control_stop{}
 .session_index_content_control_pause{}
+.session_index_content_del{
+  background-color: rgb(20, 68, 224);
+}

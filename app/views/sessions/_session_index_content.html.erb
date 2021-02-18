@@ -3,23 +3,38 @@
     <div class="session_index_content_title">
       <%= link_to "#{session.room}",  session_path(session.id) %>
     </div>
+    <div class ="session_index_content_sounds">
       <% session.sounds.each do |sound| %>
-        <div class="session_index_content_sounds">
+        <div class="session_index_content_sound">
           ● <%= sound.title %>
         </div>
         <%= audio_tag(sound.file.url, autoplay: false, controls: true ,class:"session_index_sound") %>
       <% end %>
+    </div>
   </div>
 
   <div class="session_index_content_control">
-    <div class="session_index_content_control_play">
-      <input type="button" value="play" id="audio-play" class="audio-play">
+    <div class="session_index_content_button_exp">
+      <%= session.room %> を
     </div>
-    <div class="session_index_content_control_stop">
-      <input type="button" value="pause" id="audio-pause" class="audio-pause">
+    
+    <div class="session_index_content_buttons">
+      <div class="session_index_content_control_play">
+        <input type="button" value="play" id="audio-play" class="audio-play">
+      </div>
+      <div class="session_index_content_control_stop">
+        <input type="button" value="pause" id="audio-pause" class="audio-pause">
+      </div>
+      <div class="session_index_content_control_pause">
+        <input type="button" value="reset" id="audio-reset" class="audio-reset">
+      </div>
     </div>
-    <div class="session_index_content_control_pause">
-      <input type="button" value="reset" id="audio-reset" class="audio-reset">
-    </div>
+
   </div>
+
+  <div class="session_index_content_del">
+    <%= link_to "このセッションを削除", session_path(session.id), method: :delete %>
+  </div>
+
+
 </div>

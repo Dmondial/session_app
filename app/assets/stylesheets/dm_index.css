@@ -1,6 +1,6 @@
 /* ↓DMコンテンツ全体 */
 .dm_contents{
-  background-color: purple;
+  /* background-color: purple; */
   padding-top: 80px;
 
   display: flex;
@@ -11,9 +11,10 @@
 
 /* ↓DM先リスト部分 */
 .dm_list{
+  border: solid 5px whitesmoke;
   width: 400px;
   height: 100vh;
-  background-color: aqua;
+  background-color: rgb(106, 107, 107);
 }
 .dm_friend_search{
   background-color: blue;
@@ -22,8 +23,14 @@
   width:300px;
 }
 .dm_search_submit{}
-.dm_friend_content{
+.dm_new{
   background-color: brown;
+  padding: 10px;
+  font-size: 20px;
+}
+.dm_friend_content{
+  background-color: rgb(88, 88, 88);
+  margin: 5px 0 5px 5px;
   display: flex;
 }
 .dm_friend_icon{
@@ -33,11 +40,12 @@
   border-radius: 50%;
 }
 .dm_friend_name{
-
-  background-color: coral;
+  margin: 0 10px 0 5px;
+  /* background-color: coral; */
 }
 .dm_friend_last_time{
-  background-color: royalblue;
+  margin-left: 20px ;
+  /* background-color: royalblue; */
 }
 
 
@@ -45,19 +53,31 @@
 .dm_messages{
   width: 600px;
   height: 100vh;
-  background-color: darkgreen;
-}
-.dm_message{
   background-color: darkkhaki;
+}
+.dm_message_right{
+  display: inline-block;
+  background-color: tomato;
+  padding: 5px;
+  border-radius: 30px 30px 0 30px;
+}
+.dm_message_left{
+  display: inline-block;
+  background-color: tomato;
+  padding: 5px;
+  border-radius: 30px 30px 30px 0;
 }
 
 .dm_message_me{
   text-align: right;
+  margin: 10px 10px;
 }
-.dm_message_you{}
+.dm_message_you{
+  margin: 10px 10px;
+}
 
 .dm_message_time{
-  background-color: darkorange;
+  /* background-color: darkorange; */
 }
 .dm_message_input{
   background-color: skyblue;
