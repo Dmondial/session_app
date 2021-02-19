@@ -1,0 +1,72 @@
+.modal{
+  display: ;
+  background-color:#44424280;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+}
+
+.modal_content{
+  width: 800px;
+  height: 600px;
+  border-radius: 30px;
+  color: antiquewhite;
+  background-color: rgb(32, 22, 22);
+  margin:  auto;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+}
+
+.modal_del_btn{
+  position: absolute;
+  z-index: 3;
+}
+
+.batsu{
+  display: block;
+  width: 40px;/*枠の大きさ*/
+  height: 40px;/*枠の大きさ*/
+  background: crimson;
+  position: relative;
+  border-radius: 50%;
+}
+
+.batsu::before, .batsu::after{
+  content: "";
+  display: block;
+  width: 100%;/*バツ線の長さ*/
+  height: 7px;/*バツ線の太さ*/
+  background: white;
+  transform: rotate(45deg);
+  transform-origin:0% 50%;
+  position: absolute;
+  top: calc(14% - 5px);
+  left: 14%;
+}
+
+.batsu::after{
+  transform: rotate(-45deg);
+  transform-origin:100% 50%;
+  left: auto;
+  right: 14%;
+}
+
+.modal_body{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal_deco{
+  font-weight: bold;
+}
+
+.modal_title{
+}

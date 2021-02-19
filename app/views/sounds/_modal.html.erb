@@ -1,0 +1,153 @@
+<% if user_signed_in? %>
+<div class="modal" id="modal" style="display:none;">
+<% else %>
+<div class="modal" id="modal">
+<% end %>
+
+  <div class="modal_content">
+    <div class="modal_del_btn" id="modal_del_btn">
+      <span class="batsu"></span>
+    </div>
+    <div class="modal_body">
+      
+      <div class="modal_title">
+        <h1>Gig So Matchの説明書</h1>
+      </div>
+      <div class="modal_menu">
+        <h3>MENU</h3>
+        <ul>
+          <li><a href="#modal_exp">Gig So Matchとは</a></li>
+          <li><a href="#modal_user">ユーザー登録しよう</a></li>
+          <li><a href="#modal_post">投稿してみよう</a></li>
+          <li><a href="#modal_session">セッションしよう</a></li>
+          <li><a href="#modal_fav">お気に入り登録しよう</a></li>
+          <li><a href="#modal_mypage">マイページを使おう</a></li>
+          <li><a href="#modal_dm">DMを送ろう</a></li>
+        </ul>
+      </div>
+
+      <div class="modal_menu_exp" id="modal_exp">
+        <h1>Gig So Matchとは</h1>
+        <div class="modal_menu_exp_content">
+          GigSoMatchは、<br>
+          <span class="modal_deco">音声投稿を通じたコミュニケーションアプリです。</span><br>
+          気軽に自身の音声ファイルを投稿することができ、<br>
+          アプリケーション内に気になる音源があったら、<br>
+          自分の音源、または他の音源とさらに複数の音源をミックスして聞くことができます。<br>
+          また,投稿者同士のダイレクトメッセージ機能で他の投稿者とコミュニケーションを図ることが可能です。
+        </div>
+      </div>
+
+      <div class="modal_menu_user" id="modal_user">
+        <h1>ユーザー登録しよう</h1>
+        <div class="model_menu_user_content">
+          GigSoMatchでは、アカウントを作成することで利用できるサービスが多くなります。<br>
+
+          トップページのヘッダーには、ログインボタンと、新規登録ボタンがあるので<br>
+          アカウント作成済みなら<br>
+          1. ログインボタン
+            * ユーザーのログインページに遷移<br>
+            Emailアドレスとパスワードを入力してログインしてください<br>
+          アカウントをお持ちでなければ<br>
+          2. 新規登録ボタン
+            *  ユーザーの新規登録ページに遷移
+            ・ユーザー名・Emailアドレス・パスワード　を決めて　アカウントを作成してください
+
+          
+        </div>
+      </div>
+
+      <div class="modal_menu_post" id="modal_post">
+        <h1>投稿しよう</h1>
+        <div class="model_menu_post_content">
+          投稿するはアカウント登録が必要です。<br>
+          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+          <a href="">アカウント登録</a> 
+          <a href="#modal_user">アカウント登録の説明</a>  <br>
+
+          ログインしていれば、トップページに投稿ボタンが表示されます。<br>
+          投稿ボタンから投稿フォームに遷移するので、<br>
+          ・タイトル・説明・オーディオファイルを記述、選択して、投稿ボタンを押してください。<br>
+          トップページに投稿したコンテンツが表示されます。<br>
+
+
+        </div>
+      </div>
+
+      <div class="modal_menu_session" id="modal_session">
+        <h1>セッションしよう</h1>
+        <div class="model_menu_session_content">
+          投稿するはアカウント登録が必要です。<br>
+          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+          <a href="">アカウント登録</a> 
+          <a href="#modal_user">アカウント登録の説明</a>  <br>
+
+          トップページに表示されているサウンドファイルは、<br>
+          各コントローラーで再生、Vol調整可能です。
+
+          気に入った投稿の ~~とセッション　ボタンをクリックすると<br>
+          セッションルーム作成ページへ遷移します。<br>
+          一緒に聴きたいサウンドタイトルを選択してセッションを作成すると<br>
+          セッションページに遷移します<br>
+
+          セッションページでは、・Play・Pause・Resetボタンで<br>
+          セッション内のサウンドを同時にコントロールできます。<br>
+        </div>
+      </div>
+
+      <div class="modal_menu_fav" id="modal_fav">
+        <h1>お気に入り登録しよう</h1>
+        <div class="model_menu_fav_content">
+          投稿するはアカウント登録が必要です。<br>
+          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+          <a href="">アカウント登録</a> 
+          <a href="#modal_user">アカウント登録の説明</a> <br>
+
+          トップページに表示されている投稿の「お気に入り登録ボタン」を
+          クリックするとお気に入り登録ができます。
+          お気に入り登録した投稿は、一覧として保存されます。
+          <a href="#modal_mypage">マイページ</a>から、お気に入り一覧ページへ移動すれば、
+          お気に入り登録した投稿を確認できます。
+        </div>
+      </div>
+
+      <div class="modal_menu_mypage" id="modal_mypage">
+        <h1>マイページを使おう</h1>
+        <div class="model_menu_mypage_content">
+          投稿するはアカウント登録が必要です。<br>
+          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+          <a href="">アカウント登録</a> 
+          <a href="#modal_user">アカウント登録の説明</a>  <br>
+
+          トップページのヘッダーにある　自身のユーザー名をクリックすると、
+          マイページに遷移します。
+
+          マイページでは、以下が表示されています。
+          ・自分の投稿一覧
+          ・自分の投稿が含まれているセッション一覧
+          ・ダイレクトメッセージ機能への遷移ボタン
+          ・お気に入り一覧の遷移ボタン
+          ・セッション一覧への遷移ボタン
+
+          ここから各機能へ遷移できる、HUBのようなページです
+        </div>
+      </div>
+
+      <div class="modal_menu_dm" id="modal_dm">
+        <h1>メッセージを送ろう</h1>
+        <div class="model_menu_dm_content">
+          投稿するはアカウント登録が必要です。<br>
+          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+          <a href="">アカウント登録</a> 
+          <a href="#modal_user">アカウント登録の説明</a>  <br>
+
+          マイページのダイレクトメッセージボタンをクリックして遷移します。
+          ダイレクトメッセージ機能では、
+          他のユーザーとメッセージのやりとりができます。
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

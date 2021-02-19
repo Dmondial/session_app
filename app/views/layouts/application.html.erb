@@ -14,8 +14,14 @@
 
   <body>
     <header>
-      <div class="logo"><%= image_tag("/assets/title_logo.png", class: "header-logo" ) %></div>
-      <div class="logo-title"><%= link_to "GIGSOMATCH", root_path , class:"logo-deco" %></div>
+
+      <div class="logo">
+        <%= image_tag("/assets/title_logo.png", class: "header-logo" ) %>
+      </div>
+
+      <div class="logo-title">
+        <%= link_to "GIGSOMATCH", root_path , class:"logo-deco" %>
+      </div>
 
       <div class="signin-button">
         <% if signed_in? %>
@@ -49,6 +55,15 @@
           </div>
         <% end %>
       </div>
+
+      <div class="modal_on" id="modal_on">
+        ヘルプ
+      </div>
+
+      <div>
+        <%= render partial: "/sounds/modal" %>
+      </div>
+      
     </header>
     <%= yield %>
   </body>

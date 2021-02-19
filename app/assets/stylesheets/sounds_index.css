@@ -114,6 +114,17 @@ header{
   font-size: 15px;
 }
 
+.modal_on{
+  color:whitesmoke;
+  font-size: 20px;
+  height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: rgb(53, 46, 34);
+  border-radius: 10px;
+  z-index: 3;
+}
+
 
 /* ヘッダー部分 */
 
