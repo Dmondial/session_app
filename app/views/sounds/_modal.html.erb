@@ -1,10 +1,14 @@
 <% if user_signed_in? %>
-<div class="modal" id="modal" style="display:none;">
+  <div class="modal" id="modal" style="display:none;">
 <% else %>
-<div class="modal" id="modal">
+  <% if current_page?(new_user_registration_path) || current_page?(user_session_path) %>
+    <div class="modal" id="modal" style="display:none;">
+  <% else %>
+    <div class="modal" id="modal">
+  <% end %>
 <% end %>
 
-  <div class="modal_content">
+  <div class="modal_contents">
     <div class="modal_del_btn" id="modal_del_btn">
       <span class="batsu"></span>
     </div>
@@ -26,7 +30,7 @@
         </ul>
       </div>
 
-      <div class="modal_menu_exp" id="modal_exp">
+      <div class="modal_menu_exp modal_content" id="modal_exp">
         <h1>Gig So Matchとは</h1>
         <div class="modal_menu_exp_content">
           GigSoMatchは、<br>
@@ -38,49 +42,66 @@
         </div>
       </div>
 
-      <div class="modal_menu_user" id="modal_user">
+      <div class="modal_menu_user modal_content" id="modal_user">
         <h1>ユーザー登録しよう</h1>
         <div class="model_menu_user_content">
           GigSoMatchでは、アカウントを作成することで利用できるサービスが多くなります。<br>
 
           トップページのヘッダーには、ログインボタンと、新規登録ボタンがあるので<br>
-          アカウント作成済みなら<br>
-          1. ログインボタン
-            * ユーザーのログインページに遷移<br>
+          ●アカウント作成済みなら<br>
+          　1. ログインボタン
+            　* ユーザーのログインページに遷移<br>
             Emailアドレスとパスワードを入力してログインしてください<br>
-          アカウントをお持ちでなければ<br>
-          2. 新規登録ボタン
-            *  ユーザーの新規登録ページに遷移
-            ・ユーザー名・Emailアドレス・パスワード　を決めて　アカウントを作成してください
+          ●アカウントをお持ちでなければ<br>
+          　2. 新規登録ボタン
+            　*  ユーザーの新規登録ページに遷移<br>
+            　以下を入力してアカウントを作成してください<br>
+            　・ユーザー名<br>
+            　・Emailアドレス<br>
+            　・パスワード<br>
+            
+            <br>
+            <%= image_tag "top_page1",class:"modal_image" %>
 
           
         </div>
       </div>
 
-      <div class="modal_menu_post" id="modal_post">
+      <div class="modal_menu_post modal_content" id="modal_post">
         <h1>投稿しよう</h1>
         <div class="model_menu_post_content">
-          投稿するはアカウント登録が必要です。<br>
-          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
-          <a href="">アカウント登録</a> 
-          <a href="#modal_user">アカウント登録の説明</a>  <br>
+          <div class="modal_menu_sign_in">
+            投稿するはアカウント登録が必要です。<br>
+            アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+            <a href="">アカウント登録</a> 
+            <a href="#modal_user">アカウント登録の説明</a>  <br>
+          </div>
 
+          <br>
           ログインしていれば、トップページに投稿ボタンが表示されます。<br>
           投稿ボタンから投稿フォームに遷移するので、<br>
-          ・タイトル・説明・オーディオファイルを記述、選択して、投稿ボタンを押してください。<br>
+          ・タイトル<br>
+          ・説明<br>
+          ・オーディオファイル<br>
+          を記述、選択して、投稿ボタンを押してください。<br>
           トップページに投稿したコンテンツが表示されます。<br>
+
+          <%= image_tag "top_page3_signed_in",class:"modal_image" %>
+          <%= image_tag "sound_post_page",class:"modal_image" %>
 
 
         </div>
       </div>
 
-      <div class="modal_menu_session" id="modal_session">
+      <div class="modal_menu_session modal_content" id="modal_session">
         <h1>セッションしよう</h1>
         <div class="model_menu_session_content">
-          投稿するはアカウント登録が必要です。<br>
-          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
-          <a href="">アカウント登録</a> 
-          <a href="#modal_user">アカウント登録の説明</a>  <br>
+          <div class="modal_menu_sign_in">
+            投稿するはアカウント登録が必要です。<br>
+            アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+            <a href="">アカウント登録</a> 
+            <a href="#modal_user">アカウント登録の説明</a>  <br>
+          </div>
 
           トップページに表示されているサウンドファイルは、<br>
           各コントローラーで再生、Vol調整可能です。
@@ -89,61 +110,81 @@
           セッションルーム作成ページへ遷移します。<br>
           一緒に聴きたいサウンドタイトルを選択してセッションを作成すると<br>
           セッションページに遷移します<br>
+          <%= image_tag "session_create1_movie",class:"modal_image" %>
+          <%= image_tag "session_create2_movie",class:"modal_image" %>
+          <br>
 
-          セッションページでは、・Play・Pause・Resetボタンで<br>
-          セッション内のサウンドを同時にコントロールできます。<br>
+          セッションページでは、以下のボタンで<br>
+                    セッション内のサウンドを同時にコントロールできます。<br>
+          　・Play<br>
+          　・Pause<br>
+          　・Reset<br>
+
+          
+          <%= image_tag "session_info",class:"modal_image" %>
+
         </div>
       </div>
 
-      <div class="modal_menu_fav" id="modal_fav">
+      <div class="modal_menu_fav modal_content" id="modal_fav">
         <h1>お気に入り登録しよう</h1>
         <div class="model_menu_fav_content">
-          投稿するはアカウント登録が必要です。<br>
-          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
-          <a href="">アカウント登録</a> 
-          <a href="#modal_user">アカウント登録の説明</a> <br>
-
-          トップページに表示されている投稿の「お気に入り登録ボタン」を
-          クリックするとお気に入り登録ができます。
-          お気に入り登録した投稿は、一覧として保存されます。
-          <a href="#modal_mypage">マイページ</a>から、お気に入り一覧ページへ移動すれば、
+          <div class="modal_menu_sign_in">
+            投稿するはアカウント登録が必要です。<br>
+            アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+            <a href="">アカウント登録</a> 
+            <a href="#modal_user">アカウント登録の説明</a>  <br>
+          </div>
+          トップページに表示されている投稿の<br>
+          「お気に入り登録ボタン」<br>
+          をクリックするとお気に入り登録ができます。<br>
+          お気に入り登録した投稿は、一覧として保存されます。<br>
+          <a href="#modal_mypage">マイページ</a>から、お気に入り一覧ページへ移動すれば、<br>
           お気に入り登録した投稿を確認できます。
+          <%= image_tag "fav_movie1",class:"modal_image" %>
+
         </div>
       </div>
 
-      <div class="modal_menu_mypage" id="modal_mypage">
+      <div class="modal_menu_mypage modal_content" id="modal_mypage">
         <h1>マイページを使おう</h1>
         <div class="model_menu_mypage_content">
-          投稿するはアカウント登録が必要です。<br>
-          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
-          <a href="">アカウント登録</a> 
-          <a href="#modal_user">アカウント登録の説明</a>  <br>
-
-          トップページのヘッダーにある　自身のユーザー名をクリックすると、
+          <div class="modal_menu_sign_in">
+            投稿するはアカウント登録が必要です。<br>
+            アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+            <a href="">アカウント登録</a> 
+            <a href="#modal_user">アカウント登録の説明</a>  <br>
+          </div>
+          トップページのヘッダーにある　自身のユーザー名をクリックすると、<br>
           マイページに遷移します。
 
-          マイページでは、以下が表示されています。
-          ・自分の投稿一覧
-          ・自分の投稿が含まれているセッション一覧
-          ・ダイレクトメッセージ機能への遷移ボタン
-          ・お気に入り一覧の遷移ボタン
-          ・セッション一覧への遷移ボタン
-
+          マイページでは、以下が表示されています。<br>
+          　・自分の投稿一覧<br>
+          　・自分の投稿が含まれているセッション一覧<br>
+          　・ダイレクトメッセージ機能への遷移ボタン<br>
+          　・お気に入り一覧の遷移ボタン<br>
+          　・セッション一覧への遷移ボタン<br>
+          <br>
           ここから各機能へ遷移できる、HUBのようなページです
+          <%= image_tag "mypage",class:"modal_image" %>
+
         </div>
       </div>
 
-      <div class="modal_menu_dm" id="modal_dm">
+      <div class="modal_menu_dm modal_content" id="modal_dm">
         <h1>メッセージを送ろう</h1>
         <div class="model_menu_dm_content">
-          投稿するはアカウント登録が必要です。<br>
-          アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
-          <a href="">アカウント登録</a> 
-          <a href="#modal_user">アカウント登録の説明</a>  <br>
+          <div class="modal_menu_sign_in">
+            投稿するはアカウント登録が必要です。<br>
+            アカウントをお持ちでなければ<a href="">こちら</a>からアカウントを作成してからご利用ください<br>
+            <a href="">アカウント登録</a> 
+            <a href="#modal_user">アカウント登録の説明</a>  <br>
+          </div>
+          <a href="#modal_mypage">マイページ</a>のダイレクトメッセージボタンをクリックして遷移します。<br>
+          ダイレクトメッセージ機能では、<br>
+          他のユーザーとメッセージのやりとりができます。<br>
 
-          マイページのダイレクトメッセージボタンをクリックして遷移します。
-          ダイレクトメッセージ機能では、
-          他のユーザーとメッセージのやりとりができます。
+          <%= image_tag "DMpage",class:"modal_image" %>
 
         </div>
       </div>

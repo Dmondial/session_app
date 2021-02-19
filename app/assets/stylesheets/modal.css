@@ -11,7 +11,7 @@
   display: flex;
 }
 
-.modal_content{
+.modal_contents{
   width: 800px;
   height: 600px;
   border-radius: 30px;
@@ -20,6 +20,10 @@
   margin:  auto;
   overflow-y: scroll;
   scroll-behavior: auto;
+}
+
+.modal_content{
+  margin: 80px;
 }
 
 .modal_del_btn{
@@ -67,6 +71,15 @@
 
 .modal_deco{
   font-weight: bold;
+}
+
+.modal_image{
+  width: 400px;
+  height: 225px;
+}
+
+.modal_menu_sign_in{
+  background-color: rgb(216, 72, 120);
 }
 
 .modal_title{
