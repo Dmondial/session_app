@@ -23,7 +23,9 @@
 }
 
 .modal_content{
-  margin: 80px;
+  margin: 100px;
+  width: 600px;
+  text-align: center;
 }
 
 .modal_del_btn{
@@ -71,6 +73,7 @@
 
 .modal_deco{
   font-weight: bold;
+  color: red;
 }
 
 .modal_image{
