@@ -78,8 +78,8 @@
           <div class="dm_message_input">
             <%= f.text_field :content, class: 'dm_message_text', placeholder: 'type a message' %>
             <label class="form-image">
-              <span class="image-file">画像</span>
-              <%= f.file_field :image, class: 'hidden' %>
+              <%# <span class="image-file">画像</span> %>
+              <%#= f.file_field :image, class: 'hidden' %>
             </label>
             <%= f.submit '送信', class: 'dm_message_submit' %>
           </div>
