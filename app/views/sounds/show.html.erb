@@ -37,11 +37,21 @@
     <div class="panel audio-in">
       <div class="file-wrapper">
          <%# <input type="file" id="wav-file" multiple> %>
-        <%= form_with(model: @sound, id: "wav-file") do |f| %>
-          <%= f.collection_select(:sector_id, Sound.all, :file, :title, {:prompt => "Please Select a Sector"}, {:multiple => true}) %>
+        <%= form_with(model: @sound, id: "wav-file" ,method: :get) do |f| %>
+          <%= f.collection_select(:sound_ids, @sound_all, :id, :title, {:prompt => "Please Select a Sector"}, {:multiple => true}) %>
+          <%= f.submit %>
         <% end %>
        
       </div>
+    </div>
+
+    <div class="sound_show_sounds">
+      <%= audio_tag(@sound.file, autoplay: false, controls: true) %>
+      <%  if @sound_ids.present? %>
+        <% @sound_ids.each do |sound_id| %>
+          <%= audio_tag(Sound.find(sound_id).file, autoplay: false, controls: true) %>
+        <% end %>
+      <% end %>
     </div>
     
     <!-- トラックリスト -->

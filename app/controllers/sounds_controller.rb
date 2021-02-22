@@ -21,7 +21,16 @@ class SoundsController < ApplicationController
   end
 
   def show
+    if params[:sound].present?
+      @sound= Sound.find(params[:id])
+      @sound_all = Sound.all
+      @sound_ids = params[:sound][:sound_ids]
+      redirect_to sound_path(params[:id])
+
+    end
     @sound= Sound.find(params[:id])
+    @sound_all = Sound.all
+   
   end
 
   def sound_for 

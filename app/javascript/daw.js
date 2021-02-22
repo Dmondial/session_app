@@ -122,8 +122,21 @@ class Daw {
    * @param {Event} event イベントオブジェクト
    */
   onSelectFile(event) {
+    // 試し中
+    console.log(event);
+    const audioFile = document.getElementsByTagName("audio");
+    const chose = document.getElementById("wav-file");
+    // const XHR = new XMLHttpRequest();
+    // XHR.open("GET","/sounds/#", true);
+    // XHR.requestType = "json";
+    // XHR.send();
+    // XHR.onload = () => {}
+    // 試し中
+
     // 選択されたファイル一覧を取得
-    const files = Array.from(event.target.files);
+    // const files = Array.from(event.target.files);
+    const files = Array.from(audioFile);
+    
     if (files.length == 0) {
       return;
     }
