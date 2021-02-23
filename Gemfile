@@ -63,3 +63,7 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'audiojs-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
