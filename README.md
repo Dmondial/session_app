@@ -10,7 +10,7 @@ Gig so matchは、
 # アプリケーション遷移用リンク
 ### URL
 ・AWS
-http://3.112.134.39:3000/
+http://3.112.134.39
 <br>
 ・heroku
 https://session-app-20201222.herokuapp.com/
