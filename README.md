@@ -277,4 +277,3 @@ rails s
 
 デフォルトであれば以下のURLにアクセス
 - url: localhost:3000
-
