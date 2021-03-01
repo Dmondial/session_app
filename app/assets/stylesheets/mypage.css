@@ -7,12 +7,12 @@
 }
 
 .mypage_header{
-  width: 800px;
+  width: 1200px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-  background-color: rgb(130, 139, 0);
+  /* background-color: rgb(130, 139, 0); */
 }
 
 .mypage_info{
@@ -73,12 +73,12 @@
   width: 1200px;
   margin: 50px auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .mypage_sound{
   background-color: dimgrey;
   /* width: 600px; */
-  /* margin-right: 20px; */
+  margin-right: 20px;
 }
 .mypage_session{
   background-color:lightslategrey
