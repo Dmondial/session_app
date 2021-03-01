@@ -1,0 +1,33 @@
+.mypage_edit_contents{
+  background-color: aqua;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.mypage_edit_content{
+  background-color: darksalmon;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mypage_edit_title{
+  background-color: darkslateblue;
+}
+.mypage_edit_info{
+  background-color: blueviolet;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mypage_edit_icon{background-color: burlywood;}
+.mypage_edit_bg_image{background-color: chartreuse;}
+.mypage_edit_nickname{
+  background-color: crimson;
+}
+.mypage_edit_profile{background-color: darkcyan;}
+.mypage_edit_back_button{
+  background-color: darkorange;
+}
