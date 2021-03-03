@@ -3,20 +3,30 @@
 
       <div class="mypage_header">
 
-        <div class="mypage_info">
+        <% if @user.mypage.present? %>
+          <div class="mypage_info"  style = "background-image: url(<%=rails_blob_path(@mypage.image_bg)%>);">
+        <% else %>
+          <div class="mypage_info">
+        <% end %>
+
           <div class="mypage_icon">
-            アイコン入れる
+            <%= image_tag @user.mypage.image_icon,class: :mypage_icon %>
           </div>
           <div class="mypage_nickname">
             <%# 自分のニックネーム %>
-            <%= @user.name %> 
+
+            <% if @user.mypage.present?%>
+              <%= @user.mypage.nickname %>
+            <% else %>
+              <%= @user.name %>
+            <% end %>
           </div>
           <div class="mypage_edit">
-            <a href="#">マイページの編集ボタン</a>
             <%= link_to "マイページ編集ボタン" , edit_mypage_path(current_user[:id]) %>
           </div>
           <div class="mypage_profile">
-            プロフィールをここ表示する
+            - プロフィール -<br>
+            <%= @user.mypage.profile %>
           </div>
           <div class="mypage_follow">
             フォロー数

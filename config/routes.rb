@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :mypages ,only: [:index, :edit]
+  resources :mypages ,only: [:index, :new, :create ,:edit, :update]
   resources :rooms ,only: [:index,:new, :create] do
     resources :messages ,only: [:index,:new, :create]
   end

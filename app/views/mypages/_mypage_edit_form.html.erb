@@ -1,0 +1,47 @@
+
+
+        <%= form_with(model: mypage, local: true) do |f|%>
+        <%=  render 'sounds/error_messages', model: f.object %>
+
+          <div class="mypage_edit_field">
+            <%= f.label :nickname, "ニックネーム" %><br />
+            <%= f.text_area :nickname, class: :mypage_edit_nickname %>
+          </div>
+
+          <div class="mypage_edit_field">
+            <%= f.label :profile, "プロフィール" %><br />
+            <%= f.text_area :profile, class: :mypage_edit_profile %>
+          </div>
+
+          <div class="mypage_edit_field">
+            <%= f.label :image_icon, "アイコンにする画像を選択してください" %><br />
+            <%= f.file_field :image_icon , class: :mypage_edit_icon %>
+          </div>
+
+          <div class="mypage_edit_field">
+            <%= f.label :image_bg, "ヘッダーの背景にする画像を選択してください" %><br />
+            <%= f.file_field :image_bg, class: :mypage_edit_bg %>
+          </div>
+
+
+          <div class="mypage_edit_field">
+            <%= f.submit "保存する", class: :mypage_edit_submit  %>
+          </div>
+        <% end %>
+
+        <%# <div class="mypage_edit_icon">
+          アイコン
+        </div>
+
+        <div class="mypage_edit_bg">
+          背景画像
+        </div>
+        <div class="mypage__edit_nickname">
+          ニックネーム
+        </div>
+        <div class="mypage_edit_profile">
+          プロフィール
+        </div> %>
+        <div class="mypage_edit_back_button">
+          <%= link_to "マイページに戻る", mypages_path %>
+        </div>

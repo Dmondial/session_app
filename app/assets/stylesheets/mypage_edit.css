@@ -1,6 +1,6 @@
 .mypage_edit_contents{
   background-color: aqua;
-  padding-top: 100px;
+  padding: 100px ;
   display: flex;
   justify-content: center;
 }
@@ -22,12 +22,31 @@
   flex-direction: column;
   align-items: center;
 }
-.mypage_edit_icon{background-color: burlywood;}
-.mypage_edit_bg_image{background-color: chartreuse;}
-.mypage_edit_nickname{
-  background-color: crimson;
+
+.mypage_edit_field{
+  margin: 20px;
+  text-align: center;
 }
-.mypage_edit_profile{background-color: darkcyan;}
+.mypage_edit_icon{background-color: burlywood;}
+.mypage_edit_bg{background-color: chartreuse;}
+
+.mypage_edit_nickname{
+  background-color: cornflowerblue;
+  height: 25px;
+  width: 300px;
+}
+
+.mypage_edit_profile{
+  background-color: darkolivegreen;
+  height: 200px;
+  width: 400px;
+}
+
+.mypage_edit_submit{
+  height: 60px;
+  width: 100px;
+}
+
 .mypage_edit_back_button{
-  background-color: darkorange;
+  background-color: rgb(32, 30, 26);
 }

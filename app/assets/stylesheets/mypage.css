@@ -6,17 +6,18 @@
   /* background-color: burlywood; */
 }
 
+
 .mypage_header{
   width: 900px;
   margin: auto;
   display: flex;
   justify-content: center;
-
   /* background-color: rgb(130, 139, 0); */
 }
 
 .mypage_info{
   background-color: darkmagenta;
+  /* background-image: url(images/bg_image.jpg); */
   width: 500px;
   padding: 10px;
 }
@@ -31,6 +32,10 @@
 .mypage_nickname{
   font-weight: bold;
   font-size: 25px;
+}
+
+.mypage_profile{
+  background-color: rgba(207, 205, 202, 0.459);
 }
 
 /* .mypage_edit */
