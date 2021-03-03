@@ -7,4 +7,8 @@ class MypagesController < ApplicationController
     @session = Session.all
     @session_sound = SessionSound.all
   end
+
+  def edit
+    
+  end
 end
