@@ -6,7 +6,6 @@ class MypagesController < ApplicationController
     @sound = Sound.where(user_id: current_user[:id])
     @session = Session.all
     @session_sound = SessionSound.all
-    @mypage = Mypage.find(current_user[:id])
   end
 
   def new
@@ -28,7 +27,12 @@ class MypagesController < ApplicationController
   end
 
   def update
-
+    @mypage = Mypage.find(params[:id])
+    if @mypage.update(mypage_params)
+        redirect_to mypages_path
+    else
+        render edit_mypage_path
+    end
   end
 end
 

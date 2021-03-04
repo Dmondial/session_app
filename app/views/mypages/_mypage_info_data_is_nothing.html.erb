@@ -1,0 +1,23 @@
+
+<div class="mypage_info">
+
+  <div class="mypage_icon">
+    
+  </div>
+  <div class="mypage_nickname">
+    <%= @user.name %>
+  </div>
+  <div class="mypage_edit">
+    <%= link_to "マイページ編集ボタン" , new_mypage_path %>
+  </div>
+  <div class="mypage_profile">
+    - プロフィール -<br>
+    プロフィールを追加しましょう！　追加はプロフィール編集ボタンから！
+  </div>
+  <div class="mypage_follow">
+    フォロー数
+  </div>
+  <div class="mypage_follower">
+    フォロワー数
+  </div>
+</div>
