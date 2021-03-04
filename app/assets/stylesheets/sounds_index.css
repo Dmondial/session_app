@@ -212,6 +212,7 @@ body {
   display: flex;
   position: relative;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 .sound-user-icon{
