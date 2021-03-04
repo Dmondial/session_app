@@ -3,28 +3,12 @@
 
       <div class="mypage_header">
 
-        <div class="mypage_info">
-          <div class="mypage_icon">
-            アイコン入れる
-          </div>
-          <div class="mypage_nickname">
-            <%# 自分のニックネーム %>
-            <%= @user.name %> 
-          </div>
-          <div class="mypage_edit">
-            <a href="#">マイページの編集ボタン</a>
-            <%= link_to "マイページ編集ボタン" , edit_mypage_path(current_user[:id]) %>
-          </div>
-          <div class="mypage_profile">
-            プロフィールをここ表示する
-          </div>
-          <div class="mypage_follow">
-            フォロー数
-          </div>
-          <div class="mypage_follower">
-            フォロワー数
-          </div>
-        </div>
+        <% if @user.mypage.present? %>
+            <%= render partial:"mypage_info_data_is_there", locals: {user: @user}%>
+        <% else %>
+            <%= render partial:"mypage_info_data_is_nothing", locals: {user: @user}%>
+        <% end %>
+
       
 
         <div class="mypage_menu">

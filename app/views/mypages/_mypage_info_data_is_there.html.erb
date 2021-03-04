@@ -1,0 +1,22 @@
+<div class="mypage_info"  style = "background-image: url(<%=rails_blob_path(user.mypage.image_bg)%>);">
+    <div class="mypage_icon">
+      <%= image_tag user.mypage.image_icon,class: :mypage_icon %>
+    </div>
+    <div class="mypage_nickname">
+      <%# 自分のニックネーム %>
+      <%= user.mypage.nickname %>
+    </div>
+    <div class="mypage_edit">
+      <%= link_to "マイページ編集ボタン" , edit_mypage_path(current_user[:id]) %>
+    </div>
+    <div class="mypage_profile">
+      - プロフィール -<br>
+      <%= user.mypage.profile %>
+    </div>
+    <div class="mypage_follow">
+      フォロー数
+    </div>
+    <div class="mypage_follower">
+      フォロワー数
+    </div>
+</div>
